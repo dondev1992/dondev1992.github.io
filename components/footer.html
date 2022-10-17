@@ -1,0 +1,71 @@
+<footer>
+  <nav>
+    <ul class="list-two">
+      <li>
+        <a href="https://github.com/dondev1992/" target="_blank">Github</a>
+      </li>
+      <li>
+        <a href="https://dondev1992.github.io/" target="_blank">Github.io</a>
+      </li>
+      <li>
+        <a href="https://www.freecodecamp.org/dondev1992" target="_blank"
+          >freeCodeCamp</a
+        >
+      </li>
+      <li>
+        <a href="https://www.codecademy.com/profiles/dondev1992" target="_blank"
+          >Codeacademy</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/donald-moore-full-stack/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="bottom-row">
+    <a
+      id="validation_link_html"
+      href="https://validator.w3.org/check?uri=referer"
+    >
+      <img
+        src="images/button_validation_html5.png"
+        width="88"
+        height="31"
+        alt="Validate webpage HTML."
+        class="buttons"
+      />
+    </a>
+    <p>designed by <a href="/index.html">Moore Tech Solutions &#169;2022</a></p>
+
+    <a
+      id="validation_link_css"
+      href="https://jigsaw.w3.org/css-validator/check/referer"
+    >
+      <img
+        src="images/button_validation_css.png"
+        width="88"
+        height="31"
+        alt="Validate webpage CSS."
+        class="buttons"
+      />
+    </a>
+  </div>
+  <script>
+    document
+      .getElementById("validation_link_html")
+      .setAttribute(
+        "href",
+        "https://validator.w3.org/check?uri=" + location.href
+      );
+    document
+      .getElementById("validation_link_css")
+      .setAttribute(
+        "href",
+        "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href
+      );
+  </script>
+</footer>
