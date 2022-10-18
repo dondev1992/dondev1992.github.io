@@ -1,0 +1,143 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(130deg, #fdbb7e, #feeddc);
+  height: 80vh;
+}
+
+section p {
+  max-width: 800px;
+  width: 60%;
+  text-align: justify;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0081a7;
+  color: #f1faee;
+  padding: 0 30px;
+}
+
+header nav {
+  width: 40%;
+  max-width: 400px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0081a7;
+}
+
+footer p {
+  padding: 0 20px;
+}
+
+footer nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #f1faee;
+}
+
+a:hover {
+  background-color: #a8dadc;
+  color: #f07167;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: #457b9d;
+}
+
+article {
+  width: 400px;
+  height: 200px;
+  background-color: #457b9d;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+article img {
+  width: 200px;
+  height: auto;
+  border: none;
+  margin-bottom: 10px;
+}
+
+article p {
+  padding-bottom: 5px;
+  margin: 0;
+  font-size: 0.75rem;
+  color: #f1faee;
+}
+
+article a {
+  color: #f1faee;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+article p:nth-child(3) {
+  padding-bottom: 30px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #f07167;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.address {
+  font-size: 0.75rem;
+  color: #1d3557;
+}
