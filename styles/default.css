@@ -1,6 +1,7 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
+  color: #1d3557;
   margin: 0;
   padding: 0;
 }
@@ -94,9 +95,7 @@ h3:nth-child(2) {
 }
 
 p {
-  color: #1d3557;
   margin: 0;
-  font-style: italic;
 }
 
 dt {
