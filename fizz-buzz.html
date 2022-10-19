@@ -16,15 +16,14 @@
     <div data-include="components/header.html"></div>
     <main>
       <section>
-        <h2>Fizz-Buzz!</h2>
+        <h2>FizzBuzz!</h2>
         <br />
         <button onclick="fb()">Start</button>
 
-        <h3>Results are:</h3>
         <p id="results" class="results"></p>
         <script>
           function fb() {
-            let output = "";
+            let output = "Results are:<br>";
             let startNumber = 1;
             let endNumber = 130;
 
@@ -32,11 +31,11 @@
               if (counter % 3 == 0 && counter % 5 == 0 && counter % 7 == 0) {
                 output = output + "FizzBuzzBamm!!!!" + "<br>";
               } else if (counter % 3 == 0 && counter % 5 == 0) {
-                output = output + "FizzBuzz" + "<br>";
+                output = output + "FizzBuzz!!" + "<br>";
               } else if (counter % 5 == 0 && counter % 7 == 0) {
-                output = output + "BuzzBamm" + "<br>";
+                output = output + "BuzzBamm!!" + "<br>";
               } else if (counter % 3 == 0 && counter % 7 == 0) {
-                output = output + "FizzBamm" + "<br>";
+                output = output + "FizzBamm!!" + "<br>";
               } else if (counter % 3 == 0) {
                 output = output + "Fizz" + "<br>";
               } else if (counter % 5 == 0) {
