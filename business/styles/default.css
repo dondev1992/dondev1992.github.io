@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #0081a7;
 }
 
 section {
@@ -140,4 +141,5 @@ article p:nth-child(3) {
 .address {
   font-size: 0.75rem;
   color: #1d3557;
+  font-weight: 600;
 }
