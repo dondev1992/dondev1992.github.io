@@ -36,13 +36,6 @@ header nav {
   max-width: 400px;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-}
-
 footer {
   display: flex;
   flex-direction: column;
@@ -53,15 +46,6 @@ footer {
 
 footer p {
   padding: 0 20px;
-}
-
-footer nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  width: 100%;
-  margin-bottom: 0;
 }
 
 a {
@@ -131,11 +115,12 @@ article p:nth-child(3) {
   width: 100%;
 }
 
-.bottom-row {
+footer nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  width: 20%;
 }
 
 .address {
