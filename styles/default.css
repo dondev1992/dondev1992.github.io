@@ -325,7 +325,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 115%;
+  width: 113%;
   margin: 6px 0;
 }
 
@@ -373,7 +373,7 @@ button:hover {
 }
 
 #catalyte-logo {
-  padding-top: 10px;
-  width: 150px;
+  padding: 10px 0 0 10px;
+  width: 125px;
   height: auto;
 }
