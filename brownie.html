@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/default.css" />
+    <title>Don Moore's Dynamic Monkeys | CO-CP-01 | Brownie Recipe</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="https://www.catalyte.io/" target="_blank">
+        <img
+          id="catalyte-logo"
+          src="images/tinywow_catalyte-logo.png"
+          alt="catalyte logo"
+        />
+      </a>
+      <nav class="brownie-header">
+        <ul class="brownie-nav-list">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+        <ul class="brownie-nav-list">
+          <li><a href="#recipe">Recipe</a></li>
+
+          <li><a href="#ingredients">Ingredients</a></li>
+
+          <li><a href="#steps">Steps</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="brownie-sections">
+        <h3 class="lg-h3" id="brownie-recipe">Brownie Recipe</h3>
+
+        <img
+          class="brownie-photo"
+          src="images/honey-yanibel-minaya-cruz-brownies-unsplash.jpg"
+          alt="brownies in a checker pattern"
+        />
+        <p style="font-size: 30px">
+          Now, before you tell me that the box brownies are so much faster and
+          tastes amazing, you’re right. I don’t deny that. I love a good brownie
+          mix. But THIS homemade brownie recipe makes the most gooey, chocolate
+          brownies that I’m fairly confident will become your favorite! They
+          might just look like plain brownies in the pics, but they are SO GOOD!
+        </p>
+      </section>
+      <section class="brownie-sections">
+        <h3 class="lg-h3" id="ingredients">Ingredients</h3>
+        <div class="split-list">
+          <ul style="font-family: Georgia">
+            <li>1 cup unsalted butter (2 sticks)</li>
+            <li>2 1/4 cup sugar</li>
+            <li>4 large eggs</li>
+            <li>2 tsp vanilla extract</li>
+            <li>1 1/3 cup unsweetened cocoa powder</li>
+          </ul>
+          <ul style="font-family: Georgia">
+            <li>1 teaspoon salt</li>
+            <li>1 1/2 teaspoons baking powder /li></li>
+            <li>1 1/3 cups all-purpose flour</li>
+            <li>2 cups mini semi-sweet chocolate chips</li>
+          </ul>
+        </div>
+      </section>
+      <section class="brownie-sections">
+        <h3 class="lg-h3" id="steps">Steps</h3>
+        <ol>
+          <li>Preheat oven to 350 degrees F.</li>
+          <li>
+            In a saucepan over low heat, melt butter. Add sugar and stir until
+            just combined.
+          </li>
+          <li>
+            Remove from heat and pour into heat-proof mixing bowl. Stir in eggs,
+            one at a time. Add vanilla and stir until combined.
+          </li>
+          <li>
+            Stir in cocoa powder, salt, baking powder and flour until combined.
+            Stir in chocolate chips.
+          </li>
+          <li>
+            pread brownie batter into prepared, parchment-lined 9x13 pan. Bake
+            for 30-40 minutes or until a toothpick in the center comes out
+            clean. Don’t over-bake.
+          </li>
+        </ol>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <ul class="list-two">
+          <li>
+            <a href="#catalyte-logo" target="_blank">Back to top</a>
+          </li>
+          <li>
+            <a
+              href="https://create-opp-course.gitlab.io/co-project-1"
+              target="_blank"
+              >GitlabPages</a
+            >
+          </li>
+          <li>
+            <a href="https://dondev1992.github.io/" target="_blank"
+              >Github.io</a
+            >
+          </li>
+          <li>
+            <a href="https://www.freecodecamp.org/dondev1992" target="_blank"
+              >freeCodeCamp</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.codecademy.com/profiles/dondev1992"
+              target="_blank"
+              >Codeacademy</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/donald-moore-full-stack/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://learndigital.withgoogle.com/digitalgarage/course/build-your-first-web-pages-with-html-and-css"
+              target="_blank"
+              >HTML Tutorial Google</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="bottom-row">
+        <a
+          id="validation_link_html"
+          href="https://validator.w3.org/check?uri=referer"
+        >
+          <img
+            src="images/button_validation_html5.png"
+            width="88"
+            height="31"
+            alt="Validate webpage HTML."
+            class="buttons"
+          />
+        </a>
+        <p>
+          designed by <a href="/index.html">Moore Tech Solutions &#169;2022</a>
+        </p>
+
+        <a
+          id="validation_link_css"
+          href="https://jigsaw.w3.org/css-validator/check/referer"
+        >
+          <img
+            src="images/button_validation_css.png"
+            width="88"
+            height="31"
+            alt="Validate webpage CSS."
+            class="buttons"
+          />
+        </a>
+      </div>
+      <script>
+        document
+          .getElementById("validation_link_html")
+          .setAttribute(
+            "href",
+            "https://validator.w3.org/check?uri=" + location.href
+          );
+        document
+          .getElementById("validation_link_css")
+          .setAttribute(
+            "href",
+            "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href
+          );
+      </script>
+    </footer>
+  </body>
+</html>

@@ -158,12 +158,34 @@ figure .pic-text {
   margin: 70px 0 10px 0px;
 }
 
+header img {
+  width: 200px;
+  height: auto;
+}
+
 figcaption {
   font-style: italic;
 }
 
 strong {
   color: #f07167;
+}
+
+table {
+  width: 33%;
+  font-family: Arial;
+  background-color: lightgray;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 20px;
+}
+
+table,
+th,
+tr,
+td {
+  border: 2px solid black;
+  padding: 5px 10px;
 }
 
 .list-one {
@@ -206,7 +228,7 @@ footer {
 }
 
 footer nav {
-  width: 60%;
+  width: 80%;
 }
 
 footer div p {
@@ -293,4 +315,46 @@ button:hover {
   font-size: 1rem;
   color: #1d3557;
   font-weight: 700;
+}
+
+.brownie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 80%;
+  border: 1px solid #a8dadc;
+  margin: 6px 0;
+}
+
+.split-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 80%;
+}
+
+.lg-h3 {
+  font-size: 60px;
+}
+
+.brownie-photo {
+  width: 60%;
+  height: auto;
+  margin: -10px 0 20px 0;
+}
+
+.brownie-sections {
+  background-color: #cbe3e8;
+  min-height: 200px;
+}
+
+.brownie-nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 30px 0 20px;
+  width: 50%;
 }
