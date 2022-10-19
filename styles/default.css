@@ -378,3 +378,7 @@ button:hover {
   width: 125px;
   height: auto;
 }
+
+#catalyte-logo:hover {
+  transform: scale(1.05);
+}
