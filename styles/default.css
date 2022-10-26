@@ -28,21 +28,6 @@ main {
   background-image: linear-gradient(to bottom, #1d3557, #457b9d, #1d3557);
 }
 
-/* section {
-  align-items: center;
-  background-color: #f1faee;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 1000px;
-  min-height: 400px;
-  padding: 0px 60px 30px 60px;
-  text-decoration: none;
-  width: 70%;
-} */
-
 main h2 {
   color: #1d3557;
   font-size: 3rem;
@@ -170,6 +155,7 @@ td {
 
 footer {
   align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -214,7 +200,7 @@ img {
   height: 100%;
   line-height: 1.5;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1200px;
   min-height: 400px;
   padding: 0px 60px 30px 60px;
   text-decoration: none;
@@ -275,6 +261,7 @@ img {
   justify-content: space-evenly;
   list-style-type: none;
   margin-bottom: 0;
+  max-width: 1200px;
   padding: 0;
 }
 
@@ -291,19 +278,19 @@ img {
   color: #457b9d;
 }
 
-.team-links {
+.links {
   align-items: center;
   display: flex;
   justify-content: space-around;
   width: 80%;
 }
 
-.team-links a {
+.links a {
   color: #457b9d;
   line-height: 2;
 }
 
-.team-links a:hover {
+.links a:hover {
   color: #f07167;
 }
 
