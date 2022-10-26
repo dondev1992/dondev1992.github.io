@@ -1,86 +1,104 @@
-* {
-    color: #1B3E77;
-    font-family: "Quicksand";
+@media only screen and (min-width: 992px) {
+  body {
+    margin: auto;
+    width: 992px;
+  }
 }
 
-@media only screen and (min-width:992px) {
-    body {
-        margin: auto;
-        width: 992px;
-    }
-}
-
-@media only screen and (min-width:1200px) {
-    body {
-        margin: auto;
-        width: 1200px;
-    }
+@media only screen and (min-width: 1200px) {
+  body {
+    margin: auto;
+    width: 1200px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+  }
 }
 
 h1 {
-    color: #F78D34;
-    float: none;
-    font-size: 40px;
-    text-align: left;
+  display: block;
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  padding: 0;
+  text-align: center;
 }
 
-img {
-    float: right;
-    margin: 10px 100px 10px auto;
-    width: 200px;
+.catalyte-logo {
+  float: right;
+  margin: 10px 100px 10px auto;
+  width: 200px;
+}
+
+main {
+  background-image: linear-gradient(
+    to bottom,
+    #1d3557,
+    #457b9d,
+    #a8dadc,
+    #457b9d,
+    #1d3557
+  ) !important;
+  font-family: "Quicksand";
 }
 
 section {
-    margin-top: 2.5em;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
+  background-color: #f1faee;
+  padding: 2.5em 2em;
+  max-width: 1200px;
 }
 
 ul.test-results {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 em {
-    color: #F78D34;
-    font-size: 1.2em;
-    font-weight: bold;
+  color: #f78d34;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .submit {
-    background-color: #F3BF64;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 5px 15px;
+  background-color: #f3bf64;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 15px;
 }
 
 .submit:hover {
-    background-color: #F78D34;
+  background-color: #f78d34;
 }
 
 .test-results {
-    list-style-type: lower-roman;
+  list-style-type: lower-roman;
+}
+
+.title {
+  color: #f78d34;
+  float: none;
+  font-size: 40px;
+  text-align: left;
+}
+
+.top-heading {
+  display: flex;
+  justify-content: space-between;
 }
 
 .requirement-block {
-    margin-left: 2em;
-    min-height: 90px;
+  margin-left: 2em;
+  min-height: 90px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .success-icon {
-    color: green;
+  color: green;
 }
 
 .success > .failure-icon {
-    display: none;
+  display: none;
 }
 
 .failure > .success-icon {
-    display: none;
+  display: none;
 }

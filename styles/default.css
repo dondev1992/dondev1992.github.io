@@ -28,7 +28,7 @@ main {
   background-image: linear-gradient(to bottom, #1d3557, #457b9d, #1d3557);
 }
 
-section {
+/* section {
   align-items: center;
   background-color: #f1faee;
   display: flex;
@@ -41,7 +41,7 @@ section {
   padding: 0px 60px 30px 60px;
   text-decoration: none;
   width: 70%;
-}
+} */
 
 main h2 {
   color: #1d3557;
@@ -205,6 +205,21 @@ img {
 }
 
 /* Class Selectors */
+
+.section {
+  align-items: center;
+  background-color: #f1faee;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: 400px;
+  padding: 0px 60px 30px 60px;
+  text-decoration: none;
+  width: 70%;
+}
 
 .intro p {
   margin: 2px;
