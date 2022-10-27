@@ -8,29 +8,116 @@
   </head>
   <body>
     <h2>General Exercise</h2>
-    <input type="number" id="inputa" >
-    <input type="number" id="inputb" >
-    <button onclick="activity1()" >Result</button>
+
+    <h3>Javascript Logic and Flow Control</h3>
+    <h3>Activity 1</h3>
+    <label for="inputA">Enter 1st number</label>
+    <input type="number" id="inputA" >
+    
+    <p>divided by:</p>
+    
+    <label for="inputB">Enter 2nd number</label>
+    <input type="number" id="inputB" >
+    <br>
+    <br>
+    <button onclick="activity1()" >Divide</button>
+    <br>
+    <p id="output">Answer: </p>
+
+    <h3>Activity 2</h3>
+    <label for="temperature">Enter temperature</label>
+    <input type="number" id="temperature" >
+    
+    <button onclick="clothingHelper()" >Submit</button>
+    <p id="helpingStatement"></p>
+
+    <h3>Activity 3</h3>
+    <p>If Else statement:</p>
+    <pre>
+      <code>
+        if(dieRoll <= 2) {
+          console.log('Eat maize');
+        } else if(dieRoll <= 4) {
+          console.log('Eat rice');
+        } else {
+            console.log('Eat cassava');
+          }
+      </code>
+    </pre>
+    <p>Refactored code:</p>
+    <pre>
+      <code>
+        switch(dieRoll)
+          case 1:
+          case 2: 
+          console.log('Eat maize');
+          break;
+          case 3:
+          case 4:
+          console.log('Eat rice');
+          break;
+          default:
+          console.log('Eat cassava');
+      </code>
+    </pre>
+
+    <button onclick="rollDice()">Roll dice</button>
+    <p id="diceStatement"></p>
+
     <script>
-      let a = document.getElementById('inputa');
-      let b = document.getElementById('inputb');
-      console.log(a)
-      let result = 0;
+      let firstNumber = document.getElementById('inputA');
+      let secondNumber = document.getElementById('inputB');
+      let answer = "";
+      let result = null;
       
       const activity1 = () => {
         
-        if(b.value != 0) {
-        result = a.value / b.value;
-        alert(`Result : ${result}`);
+        if(secondNumber.value != 0) {
+        result = firstNumber.value / secondNumber.value;
+        answer = `Answer: ${result}`;
       } else {
         alert("Can't use 0");
       }
-      
+      document.getElementById("output").innerHTML = answer;
     }
+
+    // Activity 2
     
-    document.getElementById('activity1-button').innerHTML = output;
+    let temperature = document.getElementById('temperature');
+    let helpingStatement = "";
+
+    const clothingHelper = () => {
+      if (temperature.value > 80) {
+        helpingStatement = 'Wear shorts!';
+      } else {
+        helpingStatement = 'Wear something else...';
+      }
       
+      document.getElementById("helpingStatement").innerHTML = helpingStatement;
+    }
+
+    // Activity 3
+
     
+
+    const rollDice = () => {
+      let dieRoll = Math.floor(Math.random() * 6);
+      let diceStatement = "";
+
+      switch(dieRoll) {
+         case 1:
+          case 2: 
+          diceStatement = 'Eat maize';
+          break;
+          case 3:
+          case 4:
+          diceStatement = 'Eat rice';
+          break;
+          default:
+          diceStatement = 'Eat cassava';
+      }
+      document.getElementById("diceStatement").innerHTML = diceStatement;   
+    }
     </script>
   </body>
 </html>
