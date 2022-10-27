@@ -4,9 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>General Exercise</title>
   </head>
   <body>
-    <h1>Hey my Peeps!!</h1>
+    <h2>General Exercise</h2>
+    <input type="number" id="inputa" >
+    <input type="number" id="inputb" >
+    <button onclick="activity1()" >Result</button>
+    <script>
+      let a = document.getElementById('inputa');
+      let b = document.getElementById('inputb');
+      console.log(a)
+      let result = 0;
+      
+      const activity1 = () => {
+        
+        if(b.value != 0) {
+        result = a.value / b.value;
+        alert(`Result : ${result}`);
+      } else {
+        alert("Can't use 0");
+      }
+      
+    }
+    
+    document.getElementById('activity1-button').innerHTML = output;
+      
+    
+    </script>
   </body>
 </html>
