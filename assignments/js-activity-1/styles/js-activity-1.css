@@ -63,6 +63,10 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  margin: 5px;
+}
+
 header {
   align-items: center;
   color: #457b9d;
@@ -85,12 +89,12 @@ img {
 }
 
 table {
-  background-color: lightgray;
+  background-color: rgb(216, 241, 252);
   border-collapse: collapse;
   font-family: Arial;
   padding: 20px;
   text-align: center;
-  width: 33%;
+  width: 50%;
 }
 
 table,
@@ -118,7 +122,7 @@ section {
   background-color: #f1faee;
   color: #1b3e77;
   margin: 0;
-  padding-bottom: 2.5em;
+  padding-bottom: 1em;
   padding-left: 2rem;
   padding-right: 2rem;
 }
