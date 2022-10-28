@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Exercise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/default.css" />
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <main>
+      <section class="general-section">
+        <h2>General Exercise</h2>
+        <h3 style="text-align: center">Javascript Logic and Flow Control</h3>
+      </section>
+      <section class="general-section">
+        <h3>Activity 1</h3>
+        <label for="inputA">Enter 1st number:</label>
+        <input type="number" id="inputA" />
+        <p>divided by:</p>
+        <label for="inputB">Enter 2nd number:</label>
+        <input type="number" id="inputB" />
+        <br />
+        <br />
+        <button onclick="activity1()">Divide</button>
+        <br />
+        <p id="output">Answer:</p>
+      </section>
+      <section class="general-section">
+        <h3>Activity 2</h3>
+        <label for="temperature">Enter temperature</label>
+        <input type="number" id="temperature" />
+
+        <button type="button" onclick="clothingHelper()">Submit</button>
+        <p id="helpingStatement"></p>
+      </section>
+      <section class="general-section">
+        <h3>Activity 3</h3>
+        <p>If Else statement:</p>
+        <pre>
+          <code>
+            if(dieRoll <= 2) {
+              console.log('Eat maize');
+            } else if(dieRoll <= 4) {
+              console.log('Eat rice');
+            } else {
+                console.log('Eat cassava');
+              }
+          </code>
+        </pre>
+        <p>Refactored code:</p>
+        <pre>
+          <code>
+            switch(dieRoll)
+              case 1:
+              case 2: 
+              console.log('Eat maize');
+              break;
+              case 3:
+              case 4:
+              console.log('Eat rice');
+              break;
+              default:
+              console.log('Eat cassava');
+          </code>
+        </pre>
+        <button type="button" onclick="rollDice()">Roll dice</button>
+        <h3 id="diceStatement"></h3>
+      </section>
+      <section class="general-section">
+        <h3>Activity 4</h3>
+        <label for="currentGallons">Current gallons of gas:</label>
+        <input type="number" id="currentGallons" />
+        <br />
+        <label for="fullTankCapacity">Full tank capacity:</label>
+        <input type="number" id="fullTankCapacity" />
+        <br />
+        <br />
+        <button type="button" onclick="pumpGasTillFull()">Pump Gas</button>
+        <br />
+        <p id="done"></p>
+      </section>
+      <section class="general-section">
+        <h2>Javascript Objects and Arrays</h2>
+
+        <h3>Group Exercise</h3>
+
+        <p>Car object:</p>
+
+        <pre>
+          <code>
+            const car = {
+              color: 'black',
+              make: 'Mercedes Benz',
+              model: '65 AMG',
+              radio_settings: {
+                current_station: 'FM 103.5',
+                cd_inserted: false,
+                current_volume: 15
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <section class="general-section" style="margin-bottom: 5px">
+        <h3>Activity: Problem Solving with Arrays</h3>
+
+        <label for="scoreArray">Enter array of scores</label>
+        <input type="numbers" id="scoreArray" placeholder="ex. 1,2,3..." />
+        <button type="button" onclick="getAverage()">Get Average</button>
+        <h3 id="solution"></h3>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script>
+      // Activity 1 ----------------------------------------------------
+
+      let firstNumber = document.getElementById("inputA");
+      let secondNumber = document.getElementById("inputB");
+      let answer = "";
+      let result = null;
+
+      const activity1 = () => {
+        if (secondNumber.value != 0) {
+          result = firstNumber.value / secondNumber.value;
+          answer = `Answer: ${result}`;
+        } else {
+          alert("Can't use 0");
+        }
+        document.getElementById("output").innerHTML = answer;
+      };
+
+      // Activity 2 -----------------------------------------------------
+
+      let temperature = document.getElementById("temperature");
+      let helpingStatement = "";
+
+      const clothingHelper = () => {
+        if (temperature.value > 80) {
+          helpingStatement = "Wear shorts!";
+        } else {
+          helpingStatement = "Wear something else...";
+        }
+
+        document.getElementById("helpingStatement").innerHTML =
+          helpingStatement;
+      };
+
+      // Activity 3 -----------------------------------------------------
+
+      const rollDice = () => {
+        let dieRoll = Math.floor(Math.random() * 6);
+        let diceStatement = "";
+
+        switch (dieRoll) {
+          case 1:
+          case 2:
+            diceStatement = "Eat maize";
+            break;
+          case 3:
+          case 4:
+            diceStatement = "Eat rice";
+            break;
+          default:
+            diceStatement = "Eat cassava";
+        }
+        document.getElementById("diceStatement").innerHTML = diceStatement;
+      };
+
+      // Activity 4 ---------------------------------------------------------
+
+      const pumpGasTillFull = () => {
+        let currentGallons = document.getElementById("currentGallons").value;
+        let totalCapacityOfTank =
+          document.getElementById("fullTankCapacity").value;
+        let totalAmountPumped = 0;
+        let finalResult = "";
+        while (currentGallons <= totalCapacityOfTank) {
+          console.log(currentGallons);
+          currentNumberOfGallons++;
+        }
+        totalAmountPumped = totalCapacityOfTank - currentGallons;
+        finalResult = `Done. Total amount of gas pumped is ${totalAmountPumped} gallons.`;
+        document.getElementById("done").innerHTML = finalResult;
+      };
+
+      //
+
+      const getAverage = () => {
+        let sum = 0;
+        let myAverage = null;
+        let scores = document.getElementById("scoreArray").value;
+        let myScores = scores.split(",");
+        console.log(myScores);
+        if (myScores.length > 0) {
+          for (let i = 0; i < myScores.length; i++) {
+            sum += parseInt(myScores[i]);
+            myAverage = sum / myScores.length;
+          }
+        }
+        console.log(sum);
+        document.getElementById(
+          "solution"
+        ).innerHTML = `The average of scores is: ${myAverage}`;
+      };
+    </script>
+  </body>
+</html>

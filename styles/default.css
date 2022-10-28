@@ -30,7 +30,7 @@ main {
 
 main h2 {
   color: #1d3557;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
@@ -203,6 +203,20 @@ img {
   max-width: 1200px;
   min-height: 400px;
   padding: 0px 60px 30px 60px;
+  text-decoration: none;
+  width: 70%;
+}
+
+.general-section {
+  align-items: center;
+  background-color: #f1faee;
+  display: block;
+  height: 100%;
+  justify-content: flex-start;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px 60px;
   text-decoration: none;
   width: 70%;
 }
