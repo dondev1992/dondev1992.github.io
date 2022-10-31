@@ -35,6 +35,19 @@ const customers = [
     last_purchase_amount_in_dollars: 100,
   },
 ];
+
+let dataTable = "<tbody>";
+
+for (let i = 0; i < customers.length; i++) {
+  dataTable += "<tr>";
+  dataTable += "<td>" + customers[i].customer_id + "</td>";
+  dataTable += "<td>" + customers[i].last_purchase_quantity + "</td>";
+  dataTable += "<td>" + customers[i].last_purchase_amount_in_dollars + "</td>";
+  dataTable += "</tr>";
+}
+dataTable += "</tbody>";
+console.log(dataTable);
+document.getElementById("tableRow").innerHTML = dataTable;
 const getIdButton = document.getElementById("get-id-button");
 
 const getCustomerData = () => {
