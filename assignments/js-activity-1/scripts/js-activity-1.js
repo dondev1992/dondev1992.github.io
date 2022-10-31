@@ -34,6 +34,13 @@ const customers = [
     last_purchase_quantity: 10,
     last_purchase_amount_in_dollars: 100,
   },
+  {
+    customer_id: "006",
+    last_name: "von Briesen",
+    first_name: "D.I.",
+    last_purchase_quantity: 100,
+    last_purchase_amount_in_dollars: 1000,
+  },
 ];
 
 let dataTable = "<tbody>";
@@ -54,7 +61,10 @@ const getCustomerData = () => {
   let id = document.getElementById("customer-lookup").value;
   const customerId = parseInt(id);
   for (let i = 0; i < customers.length; i++) {
-    if (customerId > 000 && customerId < 006) {
+    if (
+      customerId > 000 &&
+      customerId < customers[customers.length - 1].customer_id
+    ) {
       if (customerId === parseInt(customers[i].customer_id)) {
         document.getElementById(
           "customer-lookup-results"
