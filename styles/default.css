@@ -289,10 +289,14 @@ img {
   color: #457b9d;
 }
 
-.links {
+.assignment-links {
+  flex-direction: column;
+}
+
+.links,
+.assignment-links {
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   width: 80%;
 }
