@@ -47,7 +47,9 @@ function getCustomerData() {
         );
       }
     } else {
-      console.log('Customer id doesn"t exist. Enter a valid customer id.');
+      console.log(
+        `Customer id: ${id} doesn"t exist. Enter a valid customer id.`
+      );
     }
   }
 }
