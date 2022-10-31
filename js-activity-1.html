@@ -69,9 +69,23 @@
             <td>$100</td>
           </tr>
         </table>
-        <button type="button" onclick="getCustomerData()" id="get-id-button">
-          Customer Lookup
-        </button>
+        <label for="customer-lookup"><h3>Customer Lookup</h3></label
+        ><input
+          type="text"
+          placeholder="enter customer id..."
+          aria-label=""
+          id="customer-lookup"
+        />
+        <div>
+          <button type="submit" onclick="getCustomerData()" id="get-id-button">
+            Find Customer
+          </button>
+          <button class="button-inverse" onclick="resetTextField()">
+            Reset
+          </button>
+        </div>
+
+        <h3 id="customer-lookup-results" class="results-text"></h3>
       </section>
     </main>
     <div data-include="./components/footer.html"></div>
