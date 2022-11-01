@@ -43,19 +43,52 @@ const customers = [
   },
 ];
 
-let dataTable = "<tbody>";
+const addCustomer = () => {
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  const id = document.getElementById("id").value;
+  const lastPurchaseQuantity = document.getElementById(
+    "lastPurchaseQuantity"
+  ).value;
+  const lastPurchaseInDollars = document.getElementById(
+    "lastPurchaseInDollars"
+  ).value;
 
-for (let i = 0; i < customers.length; i++) {
-  dataTable += "<tr>";
-  dataTable += "<td>" + customers[i].customer_id + "</td>";
-  dataTable += "<td>" + customers[i].last_purchase_quantity + "</td>";
-  dataTable += "<td>" + customers[i].last_purchase_amount_in_dollars + "</td>";
-  dataTable += "</tr>";
-}
-dataTable += "</tbody>";
-console.log(dataTable);
-document.getElementById("tableRow").innerHTML = dataTable;
-const getIdButton = document.getElementById("get-id-button");
+  for (let i = 0; i < customers.length; i++) {
+    if (id === customers[i].customer_id) {
+      document.getElementById("status").innerHTML =
+        `Customer already exists with id: ${customers[i].customer_id}`;
+    } else {
+      customers.push({
+    customer_id: id,
+    last_name: lastName,
+    first_name: firstName,
+    last_purchase_quantity: lastPurchaseQuantity,
+    last_purchase_amount_in_dollars: lastPurchaseInDollars,
+  });
+  console.log(customers);
+  addTableRow();
+  document.getElementById('status') = 'New customer has been added.';
+    }
+  }
+};
+
+let generateTableRow = () => {
+  let dataTable = "<tbody>";
+  for (let i = 0; i < customers.length; i++) {
+    dataTable += "<tr>";
+    dataTable += "<td>" + customers[i].customer_id + "</td>";
+    dataTable += "<td>" + customers[i].last_purchase_quantity + "</td>";
+    dataTable +=
+      "<td>" + customers[i].last_purchase_amount_in_dollars + "</td>";
+    dataTable += "</tr>";
+  }
+  dataTable += "</tbody>";
+  document.getElementById("tableRow").innerHTML = dataTable;
+  const getIdButton = document.getElementById("get-id-button");
+};
+
+generateTableRow();
 
 const getCustomerData = () => {
   let id = document.getElementById("customer-lookup").value;
@@ -63,7 +96,7 @@ const getCustomerData = () => {
   for (let i = 0; i < customers.length; i++) {
     if (
       customerId > 000 &&
-      customerId < customers[customers.length - 1].customer_id
+      customerId <= customers[customers.length - 1].customer_id
     ) {
       if (customerId === parseInt(customers[i].customer_id)) {
         document.getElementById(
@@ -90,4 +123,19 @@ const resetTextField = () => {
   let id = document.getElementById("customer-lookup");
   id.value = "";
   document.getElementById("customer-lookup-results").innerHTML = "";
+};
+
+const addTableRow = () => {
+  let dataTable = "<tbody>";
+  for (let i = 0; i < customers.length; i++) {
+    dataTable += "<tr>";
+    dataTable += "<td>" + customers[i].customer_id + "</td>";
+    dataTable += "<td>" + customers[i].last_purchase_quantity + "</td>";
+    dataTable +=
+      "<td>" + customers[i].last_purchase_amount_in_dollars + "</td>";
+    dataTable += "</tr>";
+  }
+  dataTable += "</tbody>";
+  document.getElementById("tableRow").innerHTML = dataTable;
+  const getIdButton = document.getElementById("get-id-button");
 };
