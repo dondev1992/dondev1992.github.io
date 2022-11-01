@@ -43,6 +43,7 @@ const customers = [
   },
 ];
 
+/* Add new customer to customers array by storing the input data from the text fields for each property and then adding those values to a new customer object and then pushing that object to the customers array. Then call addTableRow() to rebuild the table with the new customer included. */
 const addCustomer = () => {
   const firstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
@@ -55,11 +56,14 @@ const addCustomer = () => {
   ).value;
 
   for (let i = 0; i < customers.length; i++) {
-    if (id === customers[i].customer_id) {
-      document.getElementById("status").innerHTML =
-        `Customer already exists with id: ${customers[i].customer_id}`;
-    } else {
-      customers.push({
+    const customerId = parseInt(id);
+    if (customerId === parseInt(customers[i].customer_id)) {
+      return (document.getElementById(
+        "status"
+      ).innerHTML = `Customer already exists with id: ${customers[i].customer_id}`);
+    }
+  }
+  customers.push({
     customer_id: id,
     last_name: lastName,
     first_name: firstName,
@@ -68,11 +72,10 @@ const addCustomer = () => {
   });
   console.log(customers);
   addTableRow();
-  document.getElementById('status') = 'New customer has been added.';
-    }
-  }
+  document.getElementById("status").innerHTML = "New customer has been added.";
 };
 
+/* To create a new row for the new customer added to the customers array. Regenerate the whole Customer table with the new ojects included. This is done by creating a table row element and looping through each customer object and pulling the data from each customer and concatenating it to the table row being created. */
 let generateTableRow = () => {
   let dataTable = "<tbody>";
   for (let i = 0; i < customers.length; i++) {
