@@ -56,8 +56,7 @@ const addCustomer = () => {
   ).value;
 
   for (let i = 0; i < customers.length; i++) {
-    const customerId = parseInt(id);
-    if (customerId === parseInt(customers[i].customer_id)) {
+    if (id === customers[i].customer_id) {
       return (document.getElementById(
         "status"
       ).innerHTML = `Customer already exists with id: ${customers[i].customer_id}`);

@@ -219,8 +219,9 @@ figure {
 }
 
 .results-text {
-  text-align: left;
-  max-width: 500px;
+  max-width: 60%;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .section {

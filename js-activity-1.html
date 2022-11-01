@@ -91,15 +91,15 @@
         <h3>Add New Customer</h3>
 
         <div class="add-customer-form">
-          <label for="id">ID: </label><input id="id" type="text">
+          <label for="id">ID: </label><input id="id" type="number">
         <label for="lastName">Last name: </label><input id="lastName" type="text">
         <label for="firstName">First name: </label><input id="firstName" type="text">
-        <label for="lastPurchaseQuantity">Last quantity purchased: </label><input id="lastPurchaseQuantity" type="text">
-        <label for="lastPurchaseInDollars">Last amount spent: </label><input id="lastPurchaseInDollars" type="text">
+        <label for="lastPurchaseQuantity">Last quantity purchased: </label><input id="lastPurchaseQuantity" type="number">
+        <label for="lastPurchaseInDollars">Last amount spent: </label><input id="lastPurchaseInDollars" type="number">
         <button onclick="addCustomer()">Add customer</button>
-        <h3 id="status" class="results-text"></h3>
+        
         </div>
-          
+          <h3 id="status" class="results-text"></h3>
       </section>
     </main>
     <div data-include="./components/footer.html"></div>
