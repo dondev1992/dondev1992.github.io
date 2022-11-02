@@ -131,16 +131,6 @@ main h2 {
   text-align: center;
 }
 
-section {
-  z-index: 1;
-  background-color: #f1faee;
-  color: #1b3e77;
-  margin: 0;
-  padding-bottom: 1em;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .add-customer-form {
   display: flex;
   flex-direction: column;
