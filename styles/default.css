@@ -159,6 +159,10 @@ footer {
 }
 
 footer nav {
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+
   width: 80%;
 }
 
@@ -272,8 +276,9 @@ img {
   justify-content: space-evenly;
   list-style-type: none;
   margin-bottom: 0;
-  max-width: 1200px;
+  max-width: 2000px;
   padding: 0;
+  width: 80%;
 }
 
 .bottom-row {
