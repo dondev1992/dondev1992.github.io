@@ -290,11 +290,26 @@ img {
 }
 
 .assignment-links {
-  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
 }
 
-.links,
-.assignment-links {
+.assignment-links a {
+  color: #1d3557;
+}
+
+.assignment-links a:hover {
+  color: #f07167;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #f07167;
+}
+
+.links {
   align-items: center;
   display: flex;
   justify-content: space-around;

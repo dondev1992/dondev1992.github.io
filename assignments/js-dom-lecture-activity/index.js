@@ -13,7 +13,7 @@ const onAddToDo = (event) => {
   const liText = document.createTextNode(inputField);
 
   newListItem.appendChild(liText);
-  document.querySelector("ul").appendChild(newListItem);
+  document.querySelector("#todo-list").appendChild(newListItem);
   text.value = "";
 };
 document.querySelector("button").addEventListener("click", onAddToDo);
