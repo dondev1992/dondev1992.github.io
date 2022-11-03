@@ -109,7 +109,7 @@ const average = (list, quantity) => {
   console.log(finalAverage);
   return finalAverage;
 };
-// generate list function
+// generate array list function
 
 const generateList = (arrayData, selector) => {
   for (let i = 0; i < arrayData.length; i++) {
@@ -142,6 +142,7 @@ const generateList = (arrayData, selector) => {
   }
 };
 
+// generate object list function
 const generateObjectList = (objectData, title, selector) => {
   const listTitle = document.createElement("h3");
   const unorderedList = document.createElement("ul");
