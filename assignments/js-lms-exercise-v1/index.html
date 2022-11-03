@@ -11,7 +11,7 @@
     />
     <link
       rel="stylesheet"
-      href="./assignments/js-activity-1/styles/js-activity-1.css"
+      href="./assignments/js-lms-exercise-v1/styles/js-lms-exercise-v1.css"
     />
     <link rel="icon" href="./images/d-icon.png" />
     <title>Don Moore's Dynamic Monkeys | CO-CP-01 | JS Activity 1</title>
@@ -19,9 +19,61 @@
 
   <body>
     <div data-include="./components/header.html"></div>
-    <main></main>
+    <main>
+      <section class="section">
+        <div class="first-section">
+          <h2>JS LMS Exercise v1</h2>
+
+          <h3>Filter By Submission Date</h3>
+
+          <label for="date">Date:</label
+          ><input type="text" id="date" placeholder="ex. 0/00/0000" />
+
+          <button class="button-inverse" id="date-button">
+            Filter By Date
+          </button>
+
+          <div id="date-results"></div>
+
+          <h3>Filter By StudentId</h3>
+
+          <label for="id">Student ID:</label><input type="number" id="id" />
+
+          <button class="button-inverse" id="id-button">Filter By ID</button>
+          <div id="id-results"></div>
+
+          <h3>Find Unsubmitted Quizzes</h3>
+
+          <label for="date-submitted">Date:</label>
+          <input type="text" id="date-submitted" placeholder="ex. 0/00/0000" />
+
+          <button class="button-inverse" id="unsubmitted-button">
+            Filter Unsubmitted
+          </button>
+
+          <div id="unsubmitted-results"></div>
+
+          <h3>Get Total Quiz Average</h3>
+          <button class="button-inverse" id="quiz-average-button">
+            Quiz Average
+          </button>
+
+          <h3 id="quiz-average"></h3>
+
+          <h3>Get Quiz Average by Module</h3>
+          <button class="button-inverse" id="average-score-button">
+            Quiz Average by Module
+          </button>
+
+          <h3 id="average-score"></h3>
+        </div>
+        <div class="second-section">
+          <button class="reset-button" onclick="reset()">Reset</button>
+        </div>
+      </section>
+    </main>
     <div data-include="./components/footer.html"></div>
-    <script src="./assignments/js-activity-1/scripts/js-activity-1.js"></script>
+    <script src="./assignments/js-lms-exercise-v1/scripts/js-lms-exercise-v1.js"></script>
     <script src="./scripts/HTMLInclude.min.js"></script>
   </body>
 </html>

@@ -104,7 +104,8 @@ const average = (list, quantity) => {
   for (const count of list) {
     sum += count;
   }
-  finalAverage = (sum / quantity).toFixed(1);
+  finalAverage = parseInt((sum / quantity).toFixed(1));
+  console.log(finalAverage);
   return finalAverage;
 };
 // generate list function
@@ -138,6 +139,23 @@ const generateList = (arrayData, selector) => {
     document.querySelector(`#${selector}`).appendChild(listTitle);
     document.querySelector(`#${selector}`).appendChild(unorderedList);
   }
+};
+
+const generateObjectList = (objectData, title, selector) => {
+  const listTitle = document.createElement("h3");
+  const unorderedList = document.createElement("ul");
+  const itemQuizModule1 = document.createElement("li");
+  const itemQuizModule2 = document.createElement("li");
+
+  listTitle.innerText = title;
+  itemQuizModule1.innerText = `English: ${objectData.English}`;
+  itemQuizModule2.innerText = `History: ${objectData.History}`;
+
+  unorderedList.appendChild(itemQuizModule1);
+  unorderedList.appendChild(itemQuizModule2);
+
+  document.querySelector(`#${selector}`).appendChild(listTitle);
+  document.querySelector(`#${selector}`).appendChild(unorderedList);
 };
 // Filter By Date Feature
 
@@ -201,25 +219,28 @@ const studentNames = ["Diana Ross", "Steve Smith", "Bob Ross", "Dylan Roberts"];
 const findUnsubmitted = (event) => {
   let input = event.target.parentNode.querySelector("#date-submitted");
   let date = input.value;
-  let names = [...studentName];
+  let names = [...studentNames];
+  let unsubmittedQuizNames = null;
   console.log(date);
   if (testData.length < 1) {
     document.querySelector("#unsubmitted-results").textContent = "Error";
   } else {
     for (const submission of testData) {
       if (date === submission.submissionDate) {
-        let name = submission.names;
-        for (let i = 0; i < studentNames.length; i++) {
+        let name = submission.studentName;
+        for (let i = 0; i < names.length; i++) {
           if (name === names[i]) {
             names.splice(i, 1);
           }
         }
       }
     }
+    console.log(names);
+    unsubmittedQuizNames = names.length < 1 ? "none" : names;
   }
   document.querySelector(
     "#unsubmitted-results"
-  ).textContent = `Students that haven't submitted assignmants on this date ${date} are: ${studentNames}`;
+  ).textContent = `The students that haven't submitted assignmants on ${date} are: ${unsubmittedQuizNames}`;
   input.value = "";
 };
 
@@ -249,3 +270,33 @@ document
   .addEventListener("click", getAverageScore);
 
 // getAverageScore(testData);
+
+// Average by Module
+
+const getAverageScoreByModule = () => {
+  const title = "Quiz Average Module";
+  let englishArray = [];
+  let = historyArray = [];
+  let averageScoreModule = null;
+  const selectorValue = "average-score";
+  for (const module of testData) {
+    if (module.quizModule === "English") {
+      englishArray.push(module.quizScore);
+    }
+    if (module.quizModule === "History") {
+      historyArray.push(module.quizScore);
+    }
+  }
+  englishAverage = average(englishArray, englishArray.length);
+  historyAverage = average(historyArray, historyArray.length);
+
+  averageScoreModule = {
+    English: englishAverage,
+    History: historyAverage,
+  };
+  console.log(averageScoreModule);
+  generateObjectList(averageScoreModule, title, selectorValue);
+};
+document
+  .getElementById("average-score-button")
+  .addEventListener("click", getAverageScoreByModule);
