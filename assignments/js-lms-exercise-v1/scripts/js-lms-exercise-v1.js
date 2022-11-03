@@ -105,7 +105,7 @@ const average = (list, quantity) => {
   for (const count of list) {
     sum += count;
   }
-  finalAverage = parseInt((sum / quantity).toFixed(1));
+  finalAverage = (sum / quantity).toFixed(1);
   console.log(finalAverage);
   return finalAverage;
 };
