@@ -103,6 +103,7 @@ header nav {
 
 .first-section ul {
   align-items: flex-start;
+  flex-direction: column;
   display: flex;
   justify-content: flex-start;
 }

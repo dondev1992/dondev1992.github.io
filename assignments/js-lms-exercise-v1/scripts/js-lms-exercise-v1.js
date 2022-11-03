@@ -93,8 +93,14 @@ const testData = [
 //Helper Functions
 
 // reset function
-const reset = () => {
-  location.reload();
+// const reset = () => {
+//   location.reload();
+// };
+
+const resetTextField = () => {
+  let id = document.querySelectorAll("input");
+  id.value = "";
+  document.querySelectorAll("div").innerText = "";
 };
 
 //average function
