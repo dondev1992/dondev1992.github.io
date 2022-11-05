@@ -102,10 +102,10 @@ const reset = () => {
 
 const average = (list, quantity) => {
   let sum = null;
-  for (const count of list) {
-    sum += count;
+  for (const module of testData) {
+    sum += module.quizScore;
   }
-  finalAverage = parseInt((sum / quantity).toFixed(1));
+  let finalAverage = parseInt((sum / quantity).toFixed(1));
   console.log(finalAverage);
   return finalAverage;
 };
@@ -195,13 +195,16 @@ const filterByStudentId = (event) => {
 
   if (testData.length < 1) {
     console.log(students);
-  } else {
+  } else if (testData.length > 0) {
     for (const student of testData) {
       if (studentId === student.studentId) {
         students.push(student);
       }
     }
-    console.log(students);
+  } else {
+    document.querySelector(
+      "#id-results"
+    ).textContent = `The id #${studentId} doesn't exist.`;
   }
   generateList(students, selectorValue);
   input.value = "";
