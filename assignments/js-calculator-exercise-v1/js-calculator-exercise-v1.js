@@ -51,6 +51,7 @@ const calculator = () => {
   console.log(answer);
   lastAnswer = answer;
   document.querySelector("#answer").textContent = answer;
+  document.getElementById("operand1").focus();
   document.getElementById("memory-button").addEventListener("click", () => {
     document.querySelector("#operand1").value = lastAnswer;
   });
@@ -74,28 +75,37 @@ const assignOperator = (event) => {
   document.getElementById("operand2").focus();
 };
 
-const assignNumericButtonToOperand1 = (event) => {
-  console.log(event.target);
-};
-
-const assignNumericButtonToOperand2 = () => {};
-
 const assignNumericButton = (event) => {
   let numericButton = event.target.value;
-  const operand1 = document.getElementById("operand1");
-  const operand2 = document.getElementById("operand2");
-  if (operand1 == document.activeElement) {
-    document.querySelector("#operand1").value = numericButton;
-  } else if (operand2 == document.activeElement) {
-    document.querySelector("#operand2").value = numericButton;
+  console.log(event.target.value);
+
+  let operand1 = document.getElementById("operand1");
+  let operand2 = document.getElementById("operand2");
+
+  if (document.hasFocus()) {
+    operand1.value += numericButton;
+  } else {
+    operand2.value += numericButton;
   }
+  // console.log(operand1 === document.activeElement);
+  //   if (operand1.activeElement) {
+
+  //   } else if (operand2.activeElement) {
+  //     document.getElementById("#operand2").value = numericButton;
+  //   }
 };
 
 document.querySelector("#answer-button").addEventListener("click", calculator);
 document.querySelector("#clear-button").addEventListener("click", clear);
+// document.getElementById('operand1').addEventListener('focus', () => {
+
+// }, true)
+// Assign operator buttons to operator input element
 document.querySelectorAll(".operator-buttons").forEach((button) => {
   button.addEventListener("click", assignOperator);
 });
+
+// Add event listeners to numeric buttons and assign the numeric button values to numeric inputs
 document.querySelectorAll(".numerical-buttons").forEach((button) => {
   button.addEventListener("click", assignNumericButton);
 });
