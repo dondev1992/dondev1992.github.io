@@ -13,7 +13,8 @@ button {
   border-radius: 5px;
   color: #f1faee;
   font-size: 1rem;
-  padding: 5px 20px;
+  padding: 10px;
+  text-align: center;
 }
 
 button:hover {
@@ -95,14 +96,29 @@ footer div p {
   background-color: #457b9d;
   border: 1px solid black;
   align-items: center;
-  display: flex;
-  gap: 15px;
-  padding: 15px;
-  border-radius: 5px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(6, 60px);
+  column-gap: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
   margin: 10px;
 }
 
+.output {
+  background-color: aliceblue;
+  border-radius: 5px;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-end;
+  min-height: 60px;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
 .section {
   align-items: center;
   background-color: #f1faee;
@@ -143,12 +159,6 @@ footer div p {
   width: 80%;
 }
 
-.numerical-button-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 5px;
-}
-
 .bottom-row {
   align-items: center;
   display: flex;
@@ -178,8 +188,8 @@ footer div p {
   border-radius: 5px;
   color: #f1faee;
   font-size: 1rem;
-
-  padding: 5px 20px;
+  text-align: center;
+  padding: 10px;
 }
 
 .button-inverse:hover {
@@ -194,24 +204,21 @@ footer div p {
 #validation_link_html,
 #validation_link_css {
   text-decoration: none;
+  height: 31px;
+  padding: 10px 10px;
+  width: 88px;
 }
 
-#operand1,
 #operand2 {
-  padding: 3px 6px;
-  text-align: center;
-  width: 3em;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
-#operator {
-  padding: 3px 6px;
-  text-align: center;
-  width: 2em;
+#operand1 {
   font-size: 1rem;
 }
 
 #answer {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
 }

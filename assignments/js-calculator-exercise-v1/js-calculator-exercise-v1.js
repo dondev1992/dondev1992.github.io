@@ -1,102 +1,102 @@
-const calculator = () => {
-  let operand1 = document.getElementById("operand1").value;
-  let operator = document.querySelector("#operator").value;
-  let operand2 = document.getElementById("operand2").value;
-  console.log(operand1);
+let operand1Element = document.querySelector("#operand1");
+let operand2Element = document.querySelector("#operand2");
 
-  let firstNumber = operand1;
-  let secondNumber = operand2;
-  let answer = 0;
-  let lastAnswer = 0;
-  console.log(firstNumber);
+const numericButtons = document.querySelectorAll(".numerical-buttons");
+const operatorButtons = document.querySelectorAll(".operator-buttons");
+const equalButton = document.querySelector("#answer-button");
+const clearButton = document.querySelector("#clear-button");
+const memoryButton = document.querySelector("#memory-button");
 
-  if (firstNumber === NaN || secondNumber === NaN) {
-    answer = "Enter only numbers in the number inputs";
-  } else if (
-    operator === "+" ||
-    operator === "-" ||
-    operator === "x" ||
-    operator === "/" ||
-    operator === "pow" ||
-    operator === "sqrt"
-  ) {
-    switch (operator) {
-      case "+":
-        answer = firstNumber + secondNumber;
-        break;
-      case "-":
-        answer = firstNumber - secondNumber;
-        break;
-      case "x":
-        answer = firstNumber * secondNumber;
-        break;
-      case "/":
-        if (secondNumber == 0) {
-          answer = "The denominator cannot equal '0', enter a different number";
-        } else if (secondNumber !== 0) {
-          answer = firstNumber / secondNumber;
-        }
-        break;
-      case "pow":
-        answer = Math.pow(firstNumber, secondNumber);
-        break;
-      case "sqrt":
-        answer = Math.sqrt(firstNumber);
-        break;
-    }
-  } else {
-    answer =
-      "Enter one of these operators: +, -, x, /, pow, or sqrt into the middle text field";
-  }
-  console.log(answer);
-  lastAnswer = answer;
-  document.querySelector("#answer").textContent = answer;
-  document.getElementById("memory-button").addEventListener("click", () => {
-    document.querySelector("#operand1").value = lastAnswer;
-  });
-};
-// To clear all input and answer fields
+let operand1 = "";
+let operand2 = "";
+let operatorValue = "";
+
 const clear = () => {
-  let operand1 = document.querySelector("#operand1");
-  let operator = document.querySelector("#operator");
-  let operand2 = document.querySelector("#operand2");
-
-  operand1.value = "";
-  operator.value = "";
-  operand2.value = "";
-  document.querySelector("#answer").textContent = "";
+  operand1 = "";
+  operand2 = "";
+  operator = "";
 };
 
-const assignOperator = (event) => {
-  let operator = event.target.value;
-  document.querySelector("#operator").value = operator;
-
-  document.getElementById("operand2").focus();
-};
-
-const assignNumericButtonToOperand1 = (event) => {
-  console.log(event.target);
-};
-
-const assignNumericButtonToOperand2 = () => {};
-
-const assignNumericButton = (event) => {
-  let numericButton = event.target.value;
-  const operand1 = document.getElementById("operand1");
-  const operand2 = document.getElementById("operand2");
-  if (operand1 == document.activeElement) {
-    document.querySelector("#operand1").value = numericButton;
-  } else if (operand2 == document.activeElement) {
-    document.querySelector("#operand2").value = numericButton;
+const assignOperator = (operatorValue) => {
+  if (operand2 === "") return;
+  if (operand1 !== "") {
+    calculate();
   }
+  operator = operatorValue;
+  operand1 = operand2;
+  operand2 = "";
 };
 
-document.querySelector("#answer-button").addEventListener("click", calculator);
-document.querySelector("#clear-button").addEventListener("click", clear);
-document.querySelectorAll(".operator-buttons").forEach((button) => {
-  button.addEventListener("click", assignOperator);
+const addNumber = (number) => {
+  if (number === "." && operand2.includes(number)) return;
+  operand2 = operand2.toString() + number.toString();
+};
+
+const display = () => {
+  operator;
+  operand2Element.innerText = operand2;
+  if (operator != null) operand1Element.innerText = `${operand1} ${operator}`;
+};
+
+const calculate = () => {
+  let result;
+  const firstValue = parseFloat(operand1);
+  const secondValue = parseFloat(operand2);
+
+  if (isNaN(firstValue) || isNaN(secondValue)) return;
+  switch (operator) {
+    case "+":
+      result = firstValue + secondValue;
+      break;
+    case "-":
+      result = firstValue - secondValue;
+      break;
+    case "*":
+      result = firstValue * secondValue;
+      break;
+    case "/":
+      if (secondValue === 0) {
+        result = "Cannot use 0 as a denominator";
+      } else {
+        result = firstValue / secondValue;
+      }
+      break;
+    case "pow":
+      result = Math.pow(firstValue, secondValue);
+      break;
+    case "sqrt":
+      result = Math.sqrt(firstValue);
+      break;
+    default:
+      result = "Use only numbers.";
+  }
+  console.log(result);
+  operand2 = result;
+  operator = "";
+  operand1 = "";
+};
+
+numericButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    addNumber(button.innerText);
+    display();
+  });
 });
-document.querySelectorAll(".numerical-buttons").forEach((button) => {
-  button.addEventListener("click", assignNumericButton);
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    assignOperator(button.innerText);
+    display();
+  });
 });
-document.querySelector("#sqrt").addEventListener("click", calculator);
+equalButton.addEventListener("click", () => {
+  calculate();
+  display();
+});
+clearButton.addEventListener("click", () => {
+  clear();
+  display();
+});
+memoryButton.addEventListener("click", () => {
+  memory();
+  display();
+});
