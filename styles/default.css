@@ -423,6 +423,9 @@ img {
 
 .week-container h3 {
   text-align: center;
+}
+
+.week-container {
   width: 250px;
 }
 
