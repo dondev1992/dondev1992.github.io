@@ -19,6 +19,7 @@ button {
 
 button:hover {
   background-color: #1d3557;
+  cursor: pointer;
 }
 
 h1 {
@@ -213,8 +214,8 @@ footer div p {
 #operator {
   padding: 3px 6px;
   text-align: center;
-  width: 2em;
-  font-size: 1rem;
+  width: 1em;
+  font-size: 1.5rem;
 }
 
 #answer {
