@@ -50,6 +50,7 @@ const calculator = () => {
   }
   console.log(answer);
   lastAnswer = answer;
+  document.getElementById("operand1").focus();
   document.getElementById("answer").innerText = answer;
   document.getElementById("memory-button").addEventListener("click", () => {
     document.querySelector("#operand1").value = lastAnswer;
@@ -65,6 +66,7 @@ const clear = () => {
   operator.value = "";
   operand2.value = "";
   document.querySelector("#answer").textContent = "";
+  document.getElementById("operand1").focus();
 };
 
 const assignOperator = (event) => {
