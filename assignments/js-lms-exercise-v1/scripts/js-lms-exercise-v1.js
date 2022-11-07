@@ -105,7 +105,7 @@ const average = (list, quantity) => {
   for (const module of testData) {
     sum += module.quizScore;
   }
-  let finalAverage = parseInt((sum / quantity).toFixed(1));
+  let finalAverage = parseFloat((sum / quantity).toFixed(1));
   console.log(finalAverage);
   return finalAverage;
 };
@@ -163,19 +163,20 @@ const generateObjectList = (objectData, title, selector) => {
 
 const filterByDate = (event) => {
   let input = event.target.parentNode.querySelector("input");
+  let dateOutput = document.querySelector("#date-results");
   let date = input.value;
   const selectorValue = "date-results";
   console.log(date);
   const submissions = [];
-  if (testData.length < 1) {
-    console.log(submissions);
+  if (testData.length < 1 || date === "") {
+    dateOutput.innerText = "Enter a date.";
   } else {
     for (const submission of testData) {
       if (date === submission.submissionDate) {
         submissions.push(submission);
       }
     }
-    console.log(submissions);
+    dateOutput.innerText = "There are no submissions on this date";
   }
   input.value = "";
   generateList(submissions, selectorValue);
@@ -189,28 +190,23 @@ document.getElementById("date-button").addEventListener("click", filterByDate);
 
 const filterByStudentId = (event) => {
   let input = event.target.parentNode.querySelector("#id");
+  let idOutput = document.querySelector("#id-results");
   let studentId = parseInt(input.value);
   const selectorValue = "id-results";
 
-  const students = [];
+  let students = [];
 
-  if (testData.length < 1) {
-    console.log(students);
-  } else if (testData.length > 0) {
-    for (const student of testData) {
-      if (studentId === student.studentId) {
-        students.push(student);
-      }
+  if (testData.length < 1 || studentId === "" || studentId === 0) {
+    idOutput.innerText = "Please enter a valid student id number";
+  }
+  for (const student of testData) {
+    if (studentId === student.studentId) {
+      students.push(student);
     }
-  } else {
-    document.querySelector(
-      "#id-results"
-    ).textContent = `The id #${studentId} doesn't exist.`;
   }
   generateList(students, selectorValue);
   input.value = "";
 };
-
 document
   .getElementById("id-button")
   .addEventListener("click", filterByStudentId);
@@ -257,12 +253,13 @@ document
 // Get Quiz Average Feature
 
 const getAverageScore = () => {
+  let finalAverage = 0;
   totalScore = [];
   if (testData.length > 0) {
     for (const submission of testData) {
       totalScore.push(submission.quizScore);
     }
-    average(totalScore, totalScore.length);
+    finalAverage = average(totalScore, totalScore.length);
   } else {
     console.log(totalScore);
   }
