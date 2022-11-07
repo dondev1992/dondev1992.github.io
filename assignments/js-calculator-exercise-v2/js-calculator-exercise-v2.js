@@ -19,7 +19,9 @@ const clear = () => {
 };
 
 const memory = () => {
-  operand1Element.innerText = currentAnswer;
+  if (operand2 !== "") return;
+  addNumber(currentAnswer);
+  display();
 };
 
 const assignOperator = (operatorValue) => {
