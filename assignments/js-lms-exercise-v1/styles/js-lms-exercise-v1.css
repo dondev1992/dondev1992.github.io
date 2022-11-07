@@ -85,6 +85,22 @@ header nav {
   justify-content: center;
 }
 
+main {
+  align-items: center;
+  background-color: #f1faee;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 400px;
+  padding: 0px 60px 30px 60px;
+  text-decoration: none;
+  width: 70%;
+}
+
 .first-section {
   align-items: flex-start;
   display: flex;
@@ -204,22 +220,6 @@ header nav {
   height: 500px;
   justify-content: flex-start;
   width: 40%;
-}
-
-.section {
-  align-items: center;
-  background-color: #f1faee;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 1200px;
-  min-height: 400px;
-  padding: 0px 60px 30px 60px;
-  text-decoration: none;
-  width: 70%;
 }
 
 #validation_link_html,
