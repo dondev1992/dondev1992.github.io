@@ -10,7 +10,7 @@ const calculator = () => {
   let lastAnswer = 0;
   console.log(firstNumber);
 
-  if (firstNumber === NaN || secondNumber === NaN) {
+  if (isNaN(firstNumber) || isNaN(secondNumber)) {
     answer = "Enter only numbers in the number inputs";
   } else if (
     operator === "+" ||
