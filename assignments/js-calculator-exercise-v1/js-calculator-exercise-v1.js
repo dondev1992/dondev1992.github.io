@@ -50,7 +50,7 @@ const calculator = () => {
   }
   console.log(answer);
   lastAnswer = answer;
-  document.getElementById("#answer").textContent = answer;
+  document.getElementById("answer").innerText = answer;
   document.getElementById("memory-button").addEventListener("click", () => {
     document.querySelector("#operand1").value = lastAnswer;
   });
