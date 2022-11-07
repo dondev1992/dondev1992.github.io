@@ -4,8 +4,8 @@ const calculator = () => {
   let operand2 = document.getElementById("operand2").value;
   console.log(operand1);
 
-  let firstNumber = operand1;
-  let secondNumber = operand2;
+  let firstNumber = parseFloat(operand1);
+  let secondNumber = parseFloat(operand2);
   let answer = 0;
   let lastAnswer = 0;
   console.log(firstNumber);
@@ -31,7 +31,7 @@ const calculator = () => {
         answer = firstNumber * secondNumber;
         break;
       case "/":
-        if (secondNumber == 0) {
+        if (secondNumber === 0) {
           answer = "The denominator cannot equal '0', enter a different number";
         } else if (secondNumber !== 0) {
           answer = firstNumber / secondNumber;
@@ -50,7 +50,7 @@ const calculator = () => {
   }
   console.log(answer);
   lastAnswer = answer;
-  document.querySelector("#answer").textContent = answer;
+  document.getElementById("#answer").textContent = answer;
   document.getElementById("memory-button").addEventListener("click", () => {
     document.querySelector("#operand1").value = lastAnswer;
   });
