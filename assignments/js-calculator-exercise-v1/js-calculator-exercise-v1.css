@@ -61,6 +61,7 @@ main {
   max-width: 1200px;
   min-height: 400px;
   padding: 0px 60px 30px 60px;
+  position: relative;
   text-decoration: none;
   width: 70%;
 }
@@ -108,6 +109,12 @@ footer div p {
 }
 
 /* Class Selectors */
+.calculator-link {
+  padding: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
 
 .container {
   background-color: #457b9d;
@@ -188,6 +195,13 @@ footer div p {
 .button-inverse:hover {
   background-color: #f07167;
 }
+
+/* .title-row {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+} */
 
 #equal-sign {
   font-size: 3rem;
