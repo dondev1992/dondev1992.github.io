@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/d-icon.png" />
+    <link
+      rel="stylesheet"
+      href="./assignments/js-calculator-exercise-v1/js-calculator-exercise-v1.css"
+    />
+    <title>
+      Don Moore's Dynamic Monkeys | CO-CP-01 | JS Calculator Exercise V1
+    </title>
+    <script
+      src="./assignments/js-calculator-exercise-v1/js-calculator-exercise-v1.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <div data-include="components/header.html"></div>
+    <main>
+      <section class="section">
+        <h2>JS Calculator Exercise v1</h2>
+
+        <div class="container">
+          <div class="output">
+            <div class="input-field" type="text" id="operand1"></div>
+            <div class="input-field" type="text" id="operand2"></div>
+          </div>
+
+          <button class="operator-buttons" id="+" value="+">+</button>
+
+          <button class="operator-buttons" id="-" value="-">-</button>
+          <button class="operator-buttons" id="*" value="*">*</button>
+          <button class="operator-buttons" id="/" value="/">/</button>
+
+          <button class="numerical-buttons button-inverse" id="7" value="7">
+            7
+          </button>
+          <button class="numerical-buttons button-inverse" id="8" value="8">
+            8
+          </button>
+          <button class="numerical-buttons button-inverse" id="9" value="9">
+            9
+          </button>
+
+          <button class="operator-buttons" id="sqrt" value="sqrt">sqrt</button>
+          <button class="numerical-buttons button-inverse" id="4" value="4">
+            4
+          </button>
+          <button class="numerical-buttons button-inverse" id="5" value="5">
+            5
+          </button>
+          <button class="numerical-buttons button-inverse" id="6" value="6">
+            6
+          </button>
+
+          <button class="operator-buttons" id="pow" value="pow">pow</button>
+          <button class="numerical-buttons button-inverse" id="1" value="1">
+            1
+          </button>
+          <button class="numerical-buttons button-inverse" id="2" value="2">
+            2
+          </button>
+          <button class="numerical-buttons button-inverse" id="3" value="3">
+            3
+          </button>
+          <button id="memory-button">m</button>
+          <button
+            class="numerical-buttons button-inverse"
+            id="decimal-button"
+            value="."
+          >
+            .
+          </button>
+          <button class="numerical-buttons button-inverse" id="0" value="0">
+            0
+          </button>
+          <button id="answer-button">Enter</button>
+
+          <button id="clear-button">c</button>
+        </div>
+        <div id="answer"></div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+  </body>
+</html>

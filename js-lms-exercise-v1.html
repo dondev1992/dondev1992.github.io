@@ -20,57 +20,51 @@
   <body>
     <div data-include="./components/header.html"></div>
     <main>
-      <section class="section">
-        <h2>JS LMS Exercise v1</h2>
-        <div class="row">
-          <div class="first-section">
-            <h3>Filter By Submission Date</h3>
+      <h2>JS LMS Exercise v1</h2>
+      <div class="row">
+        <div class="first-section">
+          <h3>Filter By Submission Date</h3>
 
-            <label for="date">Date:</label
-            ><input type="text" id="date" placeholder="M/DD/YYYY" />
+          <label for="date">Date:</label
+          ><input type="text" id="date" placeholder="M/DD/YYYY" />
 
-            <button class="button-inverse" id="date-button">
-              Filter By Date
-            </button>
+          <button class="button-inverse" id="date-button">
+            Filter By Date
+          </button>
 
-            <div id="date-results"></div>
+          <div id="date-results"></div>
 
-            <h3>Filter By Student ID</h3>
-            <label for="id">Student ID:</label><input type="number" id="id" />
-            <button class="button-inverse" id="id-button">Filter By ID</button>
-            <div id="id-results"></div>
+          <h3>Filter By Student ID</h3>
+          <label for="id">Student ID:</label><input type="number" id="id" />
+          <button class="button-inverse" id="id-button">Filter By ID</button>
+          <div id="id-results"></div>
 
-            <h3>Find Unsubmitted Quizzes</h3>
-            <label for="date-submitted">Date:</label>
-            <input
-              type="text"
-              id="date-submitted"
-              placeholder="M/DD/YYYY"
-            />
+          <h3>Find Unsubmitted Quizzes</h3>
+          <label for="date-submitted">Date:</label>
+          <input type="text" id="date-submitted" placeholder="M/DD/YYYY" />
 
-            <button class="button-inverse" id="unsubmitted-button">
-              Filter Unsubmitted
-            </button>
-            <div id="unsubmitted-results"></div>
+          <button class="button-inverse" id="unsubmitted-button">
+            Filter Unsubmitted
+          </button>
+          <div id="unsubmitted-results"></div>
 
-            <h3>Get Total Quiz Average</h3>
-            <button class="button-inverse" id="quiz-average-button">
-              Quiz Average
-            </button>
+          <h3>Get Total Quiz Average</h3>
+          <button class="button-inverse" id="quiz-average-button">
+            Quiz Average
+          </button>
 
-            <div id="quiz-average"></div>
-            <h3>Get Quiz Average by Module</h3>
-            <button class="button-inverse" id="average-score-button">
-              Quiz Average by Module
-            </button>
+          <div id="quiz-average"></div>
+          <h3>Get Quiz Average by Module</h3>
+          <button class="button-inverse" id="average-score-button">
+            Quiz Average by Module
+          </button>
 
-            <div id="average-score"></div>
-          </div>
-          <div class="second-section">
-            <button class="reset-button" onclick="reset()">Reset</button>
-          </div>
+          <div id="average-score"></div>
         </div>
-      </section>
+        <div class="second-section">
+          <button class="reset-button" onclick="reset()">Reset</button>
+        </div>
+      </div>
     </main>
     <div data-include="./components/footer.html"></div>
     <script src="./assignments/js-lms-exercise-v1/scripts/js-lms-exercise-v1.js"></script>
