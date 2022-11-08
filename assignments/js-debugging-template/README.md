@@ -17,6 +17,14 @@ Unfortunately, someone edited the code and broke the generator. The school has a
 
 _Take a look at the following resources for how to create a changelog using proper Markdown Syntax._
 
+## Changelog
+
+- added closing curly brace on line 27
+- added closing quote to id name on line 64
+- changed "getElementByClassName" to "getElementById" on line 8
+- changed "< 3" to "> 2"
+- changed "words" to "word" on line 42
+- changed "words" to "word" on line 44
 ## What is a README
 
 A README is a document designed to inform someone about your program. This can include installation, documentation, the most recent changes, etc. Modern READMEs are written in Markdown, which allows them to be formatted using simple [syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).

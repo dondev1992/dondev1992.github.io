@@ -5,7 +5,7 @@
  * @param {string} eventType defaults to click, but can be any event type
  */
 const addListener = (id, callback, eventType = 'click') => {
-    document.getElementsByClassName(id).addEventListener(eventType, callback);
+    document.getElementById(id).addEventListener(eventType, callback);
   };
   
   /**
@@ -24,7 +24,7 @@ const addListener = (id, callback, eventType = 'click') => {
       writeWordToList(word);
   
       wordInput.value = ''; //Clear input text
-    else {
+    } else {
       wordInput.classList.toggle('error', true); //Add error class to input
     }
   };
@@ -39,9 +39,9 @@ const addListener = (id, callback, eventType = 'click') => {
     const height = Number(document.getElementById('height').value);
     const width = Number(document.getElementById('width').value);
   
-    if (isValidWordList(words, width, height)) {
+    if (isValidWordList(word, width, height)) {
       try {
-        generateWordSearch(words, height, width);
+        generateWordSearch(word, height, width);
       } catch (err) {
         //Alert user of issue;
         if (err.message.indexOf('Unable to generate') === -1) {
@@ -61,7 +61,7 @@ const addListener = (id, callback, eventType = 'click') => {
    */
   const onEnter = e => {
     if (e.keyCode === 13) {
-      document.getElementById('add-word).click();
+      document.getElementById('add-word').click();
     }
   };
   
@@ -76,7 +76,7 @@ const addListener = (id, callback, eventType = 'click') => {
     const words = getWordList();
     return (
       !/[^A-Z]/.test(word) && //Only text
-      word.length < 3 && //Word length at least 3
+      word.length > 2 && //Word length at least 3
       !words.includes(word)
     ); //Not allowing duplicates
   };
@@ -119,7 +119,7 @@ const addListener = (id, callback, eventType = 'click') => {
    */
   const getWordList = () => {
     let words = [];
-    const liElements = getNextWordsContainer().child;
+    const liElements = getNextWordsContainer().children;
   
     for (const liElement of liElements) {
       words.push(liElement.firstChild.innerText);
