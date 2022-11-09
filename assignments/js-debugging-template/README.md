@@ -1,19 +1,22 @@
 # JS Debugging Exercise
+
 An elementary school hired you to build a word search generator for them. You built one that met the following requirements:
-* User can specify the width and height of the grid
-* User can add words to a word bank if they meet the following conditions:
-    * Word is at least 3 characters long
-    * Word includes only English letters
-    * Word is unique
-* User can remove individual words from the word bank by clicking the trash can icon for that word
-* When user clicks "Create", a grid is generated
-    * Grid has random letters
-    * Grid has the width and height that were specified
-    * Grid places all words from word bank or informs user that it couldn't
+
+- User can specify the width and height of the grid
+- User can add words to a word bank if they meet the following conditions:
+  - Word is at least 3 characters long
+  - Word includes only English letters
+  - Word is unique
+- User can remove individual words from the word bank by clicking the trash can icon for that word
+- When user clicks "Create", a grid is generated
+  - Grid has random letters
+  - Grid has the width and height that were specified
+  - Grid places all words from word bank or informs user that it couldn't
 
 Unfortunately, someone edited the code and broke the generator. The school has asked us to give them a working copy again, but we already deleted the original. The school gave us the currently broken code. It's your job to find and correct the errors. The school would also like a record of all the changes that were made. You can put this into a `changelog` section in this README. They want to know the line of code that was changed, as well as a brief description of what was changed. For example:
-* _Line 10_: change `with` to `width`
-* _Line 2_: change `too` to `to`
+
+- _Line 10_: change `with` to `width`
+- _Line 2_: change `too` to `to`
 
 _Take a look at the following resources for how to create a changelog using proper Markdown Syntax._
 
@@ -25,6 +28,13 @@ _Take a look at the following resources for how to create a changelog using prop
 - changed "< 3" to "> 2"
 - changed "words" to "word" on line 42
 - changed "words" to "word" on line 44
+- changed "writeWrodToList" to "writeWordToList"
+- changed "next-words" to "next-word-list" on line 138
+- changed "class" to "classList" on line 96
+- changed order of "word, height, width" to "word, width, height" on line 44
+- changed "liElements" to "words" on line 132
+- changed "wordInput.innerText.toUpperCase()" to "wordInput.value"
+
 ## What is a README
 
 A README is a document designed to inform someone about your program. This can include installation, documentation, the most recent changes, etc. Modern READMEs are written in Markdown, which allows them to be formatted using simple [syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
@@ -51,6 +61,7 @@ However, it is important to keep in mind that every element in your README shoul
 Get into the habit of writing a README for every program you write. The more practice and feedback you get now the less of a headache writing READMEs will be in the future.
 
 ## Additional Resources
+
 [How to Write a Good README](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/) - overview of what and why for a README
 
 [makeareadme.com](https://www.makeareadme.com/) - information and resources on READMEs
