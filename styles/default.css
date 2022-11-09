@@ -223,7 +223,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: 10px;
   width: 100%;
 }
 
