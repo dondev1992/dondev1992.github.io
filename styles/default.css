@@ -170,7 +170,8 @@ footer nav {
   align-items: center;
   justify-content: space-evenly;
   display: flex;
-
+  gap: 3px;
+  max-width: 1000px;
   width: 80%;
 }
 
@@ -224,6 +225,10 @@ img {
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.bottom-row p {
+  margin: 5px;
 }
 
 .bottom-row a {
@@ -350,12 +355,13 @@ img {
 .list-two {
   align-items: center;
   display: flex;
+  gap: 10px;
   justify-content: space-evenly;
   list-style-type: none;
   margin-bottom: 0;
-  max-width: 2000px;
+
   padding: 0;
-  width: 80%;
+  width: 100%;
 }
 
 .links {
