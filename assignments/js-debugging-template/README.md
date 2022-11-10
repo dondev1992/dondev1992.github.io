@@ -22,18 +22,20 @@ _Take a look at the following resources for how to create a changelog using prop
 
 ## Changelog
 
-- added closing curly brace on line 27
-- added closing quote to id name on line 64
-- changed "getElementByClassName" to "getElementById" on line 8
-- changed "< 3" to "> 2"
-- changed "words" to "word" on line 42
-- changed "words" to "word" on line 44
-- changed "writeWrodToList" to "writeWordToList"
-- changed "next-words" to "next-word-list" on line 138
-- changed "class" to "classList" on line 96
-- changed order of "word, height, width" to "word, width, height" on line 44
-- changed "liElements" to "words" on line 132
-- changed "wordInput.innerText.toUpperCase()" to "wordInput.value"
+- Line 27: added closing curly brace before "else"
+- Line 68: added closing quote to id name
+- Line 8: changed "getElementByClassName" to "getElementById"
+- Line 83: changed "< 3" to "> 2"
+- Line 92: changed "writeWrodToList" to "writeWordToList"
+- Line 137: changed "next-words" to "next-word-list"
+- Line 96: changed "class" to "classList"
+- Line 44: changed order of "word, height, width" to "word, width, height"
+- Line 131: changed "liElements" to "words"
+- Line 19: changed "wordInput.innerText.toUpperCase()" to "wordInput.value.toUpperCase()"
+- Line 82: changed "!/[^a-z]/" to "/^[ A-Z ]\*$/"
+- Line 117: removed "parentNode"
+- Line 117: changed "(li)" to "('li')"
+- Line 57: added "." at end of sentence
 
 ## What is a README
 

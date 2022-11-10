@@ -16,11 +16,10 @@ const onAddWord = (e) => {
   resetError();
   const wordInput = document.getElementById("new-word");
 
-  const word = wordInput.value;
+  const word = wordInput.value.toUpperCase();
 
   if (isValidWord(word)) {
     wordInput.classList.toggle("error", false); //Remove error class from input
-    console.log(word);
 
     writeWordToList(word);
 
@@ -55,7 +54,7 @@ const onCreate = (e) => {
     }
   } else {
     writeError(
-      "Are you trying to break the game? Your words must be smaller than the largest dimension of the game board"
+      "Are you trying to break the game? Your words must be smaller than the largest dimension of the game board."
     );
   }
 };
@@ -80,7 +79,7 @@ const onEnter = (e) => {
 const isValidWord = (word) => {
   const words = getWordList();
   return (
-    !/[^A-Z]/.test(word) && //Only text
+    /^[ A-Z ]*$/.test(word) && //Only text
     word.length > 2 && //Word length at least 3
     !words.includes(word)
   ); //Not allowing duplicates
@@ -91,7 +90,6 @@ const isValidWord = (word) => {
  * @param {string} word - word to add to word bank
  */
 const writeWordToList = (word) => {
-  console.log(word);
   const li = document.createElement("li");
 
   const trashButton = document.createElement("div");
@@ -116,7 +114,7 @@ const writeWordToList = (word) => {
  */
 const deleteWord = (e) => {
   const li = e.currentTarget.parentNode;
-  li.parentNode.remove(li);
+  li.remove("li");
 };
 
 /**
