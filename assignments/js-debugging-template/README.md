@@ -35,7 +35,7 @@ _Take a look at the following resources for how to create a changelog using prop
 - Line 82: changed "!/[^a-z]/" to "/^[ A-Z ]\*$/"
 - Line 117: removed "parentNode"
 - Line 117: changed "(li)" to "('li')"
-- Line 57: added "." at end of sentence
+- Line 36: removed the "e" from inside of "()"
 
 ## What is a README
 
