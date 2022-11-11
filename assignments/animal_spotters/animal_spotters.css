@@ -1,0 +1,104 @@
+body {
+  background-color: #f4f9e9;
+  box-sizing: border-box;
+  color: #2176ae;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #2ab7ca;
+  color: azure;
+}
+
+h1 {
+  font-size: 40px;
+  color: #2176ae;
+  text-align: center;
+  margin: 30px auto;
+}
+
+h3 {
+  color: green;
+  font-size: 20px;
+  height: 50px;
+  margin: 5px 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+label {
+  font-size: 20px;
+}
+
+.container {
+  background-color: #2ab7ca;
+  border: none;
+  box-shadow: -2px 5px 17px 0px rgba(0, 0, 0, 0.75);
+  margin: 50px auto;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.input_container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.text-display {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.tile {
+  background-color: rgb(27, 62, 119);
+  color: whitesmoke;
+  border: 1px solid #6290c3;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 70px;
+  text-align: center;
+}
+
+#number-of-buttons,
+#count-down {
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 15px;
+  text-align: center;
+  width: 20px;
+}
+
+#start_button {
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: -2px 5px 17px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  background-color: #2ab7ca;
+  color: aliceblue;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+#start_button:hover {
+  background-color: #ffaa5a;
+  color: azure;
+}
+
+#counter {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+}
