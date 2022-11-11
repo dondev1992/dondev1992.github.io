@@ -33,7 +33,7 @@ const onAddWord = (e) => {
  * Handles user clicking create. Will either generate grid or write an error
  * @param {Event} e
  */
-const onCreate = (e) => {
+const onCreate = () => {
   resetError();
   const words = getWordList();
   const height = Number(document.getElementById("height").value);
