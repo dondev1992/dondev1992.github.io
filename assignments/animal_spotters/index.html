@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Observation Test</title>
+    <link href="animal_spotters.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Observation Test</h1>
+    <hr />
+    <div class="input_container">
+      <div>
+        <label for="input">Number of cells: </label>
+        <input
+          id="number-of-buttons"
+          type="text"
+          value="25"
+          maxlength="3"
+          min="5"
+          max="100"
+        />
+      </div>
+      <div>
+        <label for="input">Set countdown: </label>
+        <input
+          id="count-down"
+          type="text"
+          value="20"
+          maxlength="3"
+          min="5"
+          max="100"
+        />
+      </div>
+    </div>
+    <div class="text-display">
+      <p id="counter"></p>
+      <h3 id="output"></h3>
+    </div>
+
+    <button type="button" id="start_button">Start Game</button>
+
+    <div class="container" id="grid-container"></div>
+    <div data-include="./components/footer.html"></div>
+    <script src="./scripts/HTMLInclude.min.js"></script>
+    <script src="animal_spotters.js"></script>
+  </body>
+</html>

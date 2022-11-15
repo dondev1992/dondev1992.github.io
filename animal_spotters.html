@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/d-icon.png" />
+    <title>Don Moore's Dynamic Monkeys | CO-CP-01 | Observation Test</title>
+    <link
+      href="./assignments/animal_spotters/animal_spotters.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div data-include="components/header.html"></div>
+    <main>
+      <h2>Observation Test</h2>
+      <hr />
+      <div class="input_container">
+        <div>
+          <label for="input">Number of cells: </label>
+          <input
+            id="number-of-buttons"
+            type="text"
+            value="25"
+            maxlength="3"
+            min="5"
+            max="100"
+          />
+        </div>
+        <div>
+          <label for="input">Set countdown: </label>
+          <input
+            id="count-down"
+            type="text"
+            value="20"
+            maxlength="3"
+            min="5"
+            max="100"
+          />
+        </div>
+      </div>
+      <div class="text-display">
+        <p id="counter"></p>
+        <h3 id="output"></h3>
+      </div>
+
+      <button type="button" id="start_button">Start Game</button>
+
+      <div class="container" id="grid-container"></div>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="./assignments/animal_spotters/animal_spotters.js"></script>
+  </body>
+</html>
