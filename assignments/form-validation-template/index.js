@@ -7,6 +7,8 @@ const zip = document.querySelector("#zip");
 const id = document.querySelector("#id");
 const errorDisplay = document.getElementsByClassName("errors");
 
+// Functions
+
 const showError = (input, message) => {
   //   input.styles.color = "red";
   console.log(message);
@@ -34,8 +36,8 @@ const isValidAlphaNumeric = (input) => {
 
 const isValidPassword = (input) => {
   const regEx =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]$/;
-  return regEx.test(input.value.trim());
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^A-Za-z0-9]).{8,}$/;
+  return regEx.test(input.value);
 };
 
 // Submit button Event Listener
@@ -46,6 +48,7 @@ forms.forEach((form) => {
     [...form.elements].forEach((input) => {
       if (input.classList.contains("required")) {
         if (input.value == "") {
+          console.log(input.name);
           showError(
             input,
             "Required fields must have a value that is not empty or whitespace"
@@ -54,12 +57,22 @@ forms.forEach((form) => {
           return input;
         }
       }
+      if (input.classList.contains("password")) {
+        
+        if (isValidNumber(input)) {
+          console.log(input.name);
+          showError(
+            input,
+            "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters."
+          );
+        }
+      }
       if (input.classList.contains("numeric")) {
         if (input.value == "") {
           return;
         }
         if (!isValidNumber(input)) {
-          console.log(input.value);
+          console.log(input.name);
           showError(input, "Numeric fields must be a series of numbers.");
         }
       }
@@ -68,7 +81,7 @@ forms.forEach((form) => {
           return;
         }
         if (!isValidRequiredSize(input)) {
-          console.log(input.value);
+          console.log(input.name);
           showError(
             input,
             "Required_size field lengths must exactly match the minlength attribute of that field."
@@ -80,7 +93,7 @@ forms.forEach((form) => {
           return;
         }
         if (input.value.length < 8) {
-          console.log(input.value);
+          console.log(input.name);
           showError(
             input,
             "Usernamefields must contain at least 8 characters."
@@ -94,20 +107,9 @@ forms.forEach((form) => {
         }
       }
 
-      if (input.classList.contains("password")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidPassword(input)) {
-          console.log(input.value);
-          showError(
-            input,
-            "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters."
-          );
-        }
-      }
+      
+      
     });
-
-    console.log(e);
+    console.log('done');
   });
 });
