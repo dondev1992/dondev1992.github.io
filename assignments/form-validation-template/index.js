@@ -64,29 +64,29 @@ for (const form of document.querySelectorAll("form")) {
     // Loop through each input of form and check validations by class name
     [...form.elements].forEach((input) => {
       if (input.classList.contains("required")) {
-        if (input.value === "" || input.value.trim().length === 0) {errors.push("Required fields must have a value that is not empty or whitespace")}
+        if (input.value === "" || input.value.trim().length === 0) {errors.push("Required fields must have a value that is not empty or whitespace");}
       }
       if (input.classList.contains("password") && (input.value !== "")) {
-        if (!isValidPassword(input)) {errors.push("Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.")}
+        if (!isValidPassword(input)) {errors.push("Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.");}
       }
       if (input.classList.contains("numeric") && input.value !== "") {
-        if (!isValidNumber(input)) {errors.push("Numeric fields must be a series of numbers.")}
+        if (!isValidNumber(input)) {errors.push("Numeric fields must be a series of numbers.");}
       }
       if (input.classList.contains("required_size") && input.value !== "") {
-        if (!isValidRequiredSize(input)) {errors.push("Required_size field lengths must exactly match the minlength attribute of that field.")}
+        if (!isValidRequiredSize(input)) {errors.push("Required_size field lengths must exactly match the minlength attribute of that field.");}
       }
       if (input.classList.contains("username") && input.value !== "") {
-        if (input.value.length < 8) { errors.push("Username fields must contain at least 8 characters.")}
-        if (!isValidAlphaNumeric(input)) {errors.push("Username fields must contain only alphanumeric characters.")}
+        if (input.value.length < 8) { errors.push("Username fields must contain at least 8 characters.");}
+        if (!isValidAlphaNumeric(input)) {errors.push("Username fields must contain only alphanumeric characters.");}
       }
       if (input.classList.contains("phone") && input.value !== "") {
-        if (!isValidPhoneNumber(input)) {errors.push("Phone fields must match the format of XXX-XXX-XXXX.")}
+        if (!isValidPhoneNumber(input)) {errors.push("Phone fields must match the format of XXX-XXX-XXXX.");}
       }
       if (input.classList.contains("date") && input.value !== "") {
-        if (!isValidDate(input)) {errors.push("Date fields must match the format of XX/XX/XXXX.")}
+        if (!isValidDate(input)) {errors.push("Date fields must match the format of XX/XX/XXXX.");}
       }
       if (input.classList.contains("alphabetic") && input.value !== "") {
-        if (!isValidAlphabetic(input)) {errors.push("Alphabetic fields must be a series of alphabetic characters.")}
+        if (!isValidAlphabetic(input)) {errors.push("Alphabetic fields must be a series of alphabetic characters.");}
       }
     });
     // If there are errors, show errors in a list. If no errors, submit form
