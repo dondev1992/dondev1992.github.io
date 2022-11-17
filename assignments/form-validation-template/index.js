@@ -64,7 +64,7 @@ for (const form of document.querySelectorAll("form")) {
     // Loop through each input of form and check validations by class name
     [...form.elements].forEach((input) => {
       if (input.classList.contains("required")) {
-        if (input.value == "") {errors.push("Required fields must have a value that is not empty or whitespace")}
+        if (input.value == "" || input.value.trim().length === 0) {errors.push("Required fields must have a value that is not empty or whitespace")}
       }
       if (input.classList.contains("password") && input.value !== "") {
         if (!isValidPassword(input)) {errors.push("Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.")}
