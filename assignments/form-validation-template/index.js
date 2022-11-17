@@ -42,12 +42,12 @@ const isValidAlphabetic = (input) => {
 };
 
 const isValidPassword = (input) => {
-  const regEx = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!?@#$%^&+=.\-_*])([a-zA-Z0-9!?@#$%^&+=*.\-_]){3,}$/;
+  const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[¬!"£$%^&*()_+=\-`{}:@~#';<>?/.,|\\]).*$/;
   return regEx.test(input.value);
 };
 
 const isValidDate = (input) => {
-  const regEx = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+  const regEx = /[0-9]{2}[/][0-9]{2}[/][0-9]{4}/;
   return regEx.test(input.value);
 };
 
@@ -64,9 +64,9 @@ for (const form of document.querySelectorAll("form")) {
     // Loop through each input of form and check validations by class name
     [...form.elements].forEach((input) => {
       if (input.classList.contains("required")) {
-        if (input.value == "" || input.value.trim().length === 0) {errors.push("Required fields must have a value that is not empty or whitespace")}
+        if (input.value === "" || input.value.trim().length === 0) {errors.push("Required fields must have a value that is not empty or whitespace")}
       }
-      if (input.classList.contains("password") && input.value !== "") {
+      if (input.classList.contains("password") && (input.value !== "")) {
         if (!isValidPassword(input)) {errors.push("Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.")}
       }
       if (input.classList.contains("numeric") && input.value !== "") {
@@ -77,7 +77,7 @@ for (const form of document.querySelectorAll("form")) {
       }
       if (input.classList.contains("username") && input.value !== "") {
         if (input.value.length < 8) { errors.push("Username fields must contain at least 8 characters.")}
-        else if (!isValidAlphaNumeric(input)) {errors.push("Username fields must contain only alphanumeric characters.")}
+        if (!isValidAlphaNumeric(input)) {errors.push("Username fields must contain only alphanumeric characters.")}
       }
       if (input.classList.contains("phone") && input.value !== "") {
         if (!isValidPhoneNumber(input)) {errors.push("Phone fields must match the format of XXX-XXX-XXXX.")}
