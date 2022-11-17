@@ -47,7 +47,7 @@ const isValidPassword = (input) => {
 };
 
 const isValidDate = (input) => {
-  const regEx = /^[0-9]{2}\/][0-9]{2}[\/][0-9]{4}$/;
+  const regEx = /^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/;
   return regEx.test(input.value);
 };
 
