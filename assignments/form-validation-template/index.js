@@ -1,43 +1,30 @@
-const forms = document.querySelectorAll("form");
-// const firstName = document.querySelector("#firstname");
-// const lastName = document.querySelector("#lastname");
-// const userName = document.querySelector("#username");
-// const password = document.querySelector("#password");
-// const zip = document.querySelector("#zip");
-// const id = document.querySelector("#id");
+// Remove error list from document
+const removeList = (form) => {
+  const existingList = form.parentNode.querySelector(".errors");
+  while (existingList.firstChild) {
+    existingList.removeChild(existingList.firstChild);
+  }
+};
+// Generates error list and display in document
+const displayList = (form, errors) => {
+  const errorDisplay = form.parentNode.querySelector(".errors");
+  const unorderedList = document.createElement("ul");
+  // Add each error message to a list element 
+  for (const error of errors) {
+    const liItem = document.createElement("li");
+    const messageText = document.createTextNode(error);
 
-
-// const errorDisplays = document.getElementsByClassName("errors");
-
-// [...errorDisplays].forEach(errorDisplay => {
-//   const unorderedList = document.createElement('ul');
-//   errorDisplay.appendChild(unorderedList)});
-
-// Functions
-
-const showError = (form, message) => {
-  const errorDisplay = form.parentNode.querySelector('.errors');
-  console.log(errorDisplay);
-  const unorderedList = document.createElement('ul');
-  const liItem = document.createElement('li');
-  const messageText = document.createTextNode(message);
-
-  liItem.appendChild(messageText);
-  unorderedList.appendChild(liItem);
+    liItem.appendChild(messageText);
+    unorderedList.appendChild(liItem);
+    liItem.style = "color: red";
+  }
   errorDisplay.appendChild(unorderedList);
-  //   input.styles.color = "red";
-  console.log(message);
 };
 
-const showSuccess = (input) => {
-  console.log(input.value);
-};
-
-const isValidEntry = () => {};
-
+// Validation functions
 const isValidNumber = (input) => {
   const regEx = /^\d+$/;
-  return regEx.test(input.value);
+  return regEx.test(input.value.trim());
 };
 
 const isValidRequiredSize = (input) => {
@@ -55,129 +42,59 @@ const isValidAlphabetic = (input) => {
 };
 
 const isValidPassword = (input) => {
-  const regEx =
-    /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.\-_*])([a-zA-Z0-9@#$%^&+=*.\-_]){3,}$/;
-    
+  const regEx = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!?@#$%^&+=.\-_*])([a-zA-Z0-9!?@#$%^&+=*.\-_]){3,}$/;
   return regEx.test(input.value);
 };
 
 const isValidDate = (input) => {
-  const regEx =  /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
-  console.log(regEx.test(input.value))
-  return regEx.test(input.value)
-}
+  const regEx = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+  return regEx.test(input.value);
+};
 
 const isValidPhoneNumber = (input) => {
   const regEx = /^(?:\(\d{3}\)|\d{3}-)\d{3}-\d{4}$/;
-  return regEx.test(input.value)
-}
+  return regEx.test(input.value);
+};
 
-// Submit button Event Listener
-
-forms.forEach((form) => {
-  form.addEventListener("submit", (e) => {
-    console.log(form);
+// Loop through each form element and add event listener
+for (const form of document.querySelectorAll("form")) {
+  form.addEventListener("submit", function validationCheck(e) {
     e.preventDefault();
+    const errors = [];
+    // Loop through each input of form and check validations by class name
     [...form.elements].forEach((input) => {
       if (input.classList.contains("required")) {
-        if (input.value == "") {
-          console.log(input.name);
-          showError(
-            form,
-            "Required fields must have a value that is not empty or whitespace"
-          );
-        }
-      } else
-      if (input.classList.contains("password")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidPassword(input)) {
-          console.log(input.name);
-          showError(
-            form,
-            "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters."
-          );
-        }
-      } else
-      if (input.classList.contains("numeric")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidNumber(input)) {
-          console.log(input.name);
-          showError(form, "Numeric fields must be a series of numbers.");
-        }
-      } else
-      if (input.classList.contains("required_size")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidRequiredSize(input)) {
-          console.log(input.name);
-          showError(
-            form,
-            "Required_size field lengths must exactly match the minlength attribute of that field."
-          );
-        }
-      } else
-      if (input.classList.contains("username")) {
-        if (input.value == "") {
-          return;
-        }
-        if (input.value.length < 8) {
-          console.log(input.name);
-          showError(
-            form,
-            "Usernamefields must contain at least 8 characters."
-          );
-        } else if (!isValidAlphaNumeric(input)) {
-          console.log(input.value);
-          showError(
-            form,
-            "Username fields must contain only alphanumeric characters."
-          );
-        }
-      } else 
-      if (input.classList.contains("phone")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidPhoneNumber(input)) {
-          console.log(input.name);
-          showError(
-            form,
-            "Phone fields must match the format of XXX-XXX-XXXX."
-          );
-        }
-      } else
-      if (input.classList.contains("date")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidDate(input)) {
-          console.log(input.name);
-          showError(
-            form,
-            "Date fields must match the format of XX/XX/XXXX."
-          );
-        }
-      } else 
-      if (input.classList.contains("alphabetic")) {
-        if (input.value == "") {
-          return;
-        }
-        if (!isValidAlphabetic(input)) {
-          console.log(input.name);
-          showError(
-            form,
-            "Alphabetic fields must be a series of alphabetic characters."
-          );
-        }
-      }  
-    })
-    if (hasNoErrors) {
+        if (input.value == "") {errors.push("Required fields must have a value that is not empty or whitespace")}
+      }
+      if (input.classList.contains("password") && input.value !== "") {
+        if (!isValidPassword(input)) {errors.push("Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.")}
+      }
+      if (input.classList.contains("numeric") && input.value !== "") {
+        if (!isValidNumber(input)) {errors.push("Numeric fields must be a series of numbers.")}
+      }
+      if (input.classList.contains("required_size") && input.value !== "") {
+        if (!isValidRequiredSize(input)) {errors.push("Required_size field lengths must exactly match the minlength attribute of that field.")}
+      }
+      if (input.classList.contains("username") && input.value !== "") {
+        if (input.value.length < 8) { errors.push("Usernamefields must contain at least 8 characters.")}
+        else if (!isValidAlphaNumeric(input)) {errors.push("Username fields must contain only alphanumeric characters.")}
+      }
+      if (input.classList.contains("phone") && input.value !== "") {
+        if (!isValidPhoneNumber(input)) {errors.push("Phone fields must match the format of XXX-XXX-XXXX.")}
+      }
+      if (input.classList.contains("date") && input.value !== "") {
+        if (!isValidDate(input)) {errors.push("Date fields must match the format of XX/XX/XXXX.")}
+      }
+      if (input.classList.contains("alphabetic") && input.value !== "") {
+        if (!isValidAlphabetic(input)) {errors.push("Alphabetic fields must be a series of alphabetic characters.")}
+      }
+    });
+    // If there are errors, show errors in a list. If no errors, submit form
+    if (errors.length > 0) {
+      removeList(form);
+      displayList(form, errors);
+    } else {
       form.submit();
     }
   });
-});
+}
