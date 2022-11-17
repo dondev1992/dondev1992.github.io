@@ -60,7 +60,7 @@ const isValidPhoneNumber = (input) => {
 for (const form of document.querySelectorAll("form")) {
   form.addEventListener("submit", function validationCheck(e) {
     e.preventDefault();
-    const errors = [];
+    let errors = [];
     // Loop through each input of form and check validations by class name
     [...form.elements].forEach((input) => {
       if (input.classList.contains("required")) {
