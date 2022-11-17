@@ -76,7 +76,7 @@ for (const form of document.querySelectorAll("form")) {
         if (!isValidRequiredSize(input)) {errors.push("Required_size field lengths must exactly match the minlength attribute of that field.")}
       }
       if (input.classList.contains("username") && input.value !== "") {
-        if (input.value.length < 8) { errors.push("Usernamefields must contain at least 8 characters.")}
+        if (input.value.length < 8) { errors.push("Username fields must contain at least 8 characters.")}
         else if (!isValidAlphaNumeric(input)) {errors.push("Username fields must contain only alphanumeric characters.")}
       }
       if (input.classList.contains("phone") && input.value !== "") {
