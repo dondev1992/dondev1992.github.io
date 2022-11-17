@@ -1,12 +1,12 @@
 // Remove error list from document
-const removeList = (form) => {
+const removeErrorList = (form) => {
   const existingList = form.parentNode.querySelector(".errors");
   while (existingList.firstChild) {
     existingList.removeChild(existingList.firstChild);
   }
 };
 // Generates error list and display in document
-const displayList = (form, errors) => {
+const displayErrorList = (form, errors) => {
   const errorDisplay = form.parentNode.querySelector(".errors");
   const unorderedList = document.createElement("ul");
   // Add each error message to a list element 
@@ -91,8 +91,8 @@ for (const form of document.querySelectorAll("form")) {
     });
     // If there are errors, show errors in a list. If no errors, submit form
     if (errors.length > 0) {
-      removeList(form);
-      displayList(form, errors);
+      removeErrorList(form);
+      displayErrorList(form, errors);
     } else {
       form.submit();
     }
