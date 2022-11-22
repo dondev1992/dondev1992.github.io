@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Fundamentals Exercise</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./images/icon.png">
-    <script src="index.js" defer></script>
-    <script src="tests.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/d-icon.png" />
+    <link rel="stylesheet" href="./assignments/js-fundamentals-template/style.css">
+    <link rel="icon" href="./assignments/js-fundamentals-template/images/icon.png">
+    <script src="./assignments/js-fundamentals-template/index.js" defer></script>
+    <script src="./assignments/js-fundamentals-template/tests.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>JS Fundamentals Exercise</h1>
-        <div><img src="./images/logo.png" alt="Catalyte Logo" /></div>
-    </header>
+    <div data-include="../../components/header.html"></div>
     <main>
-        <section>
+            <div class="title-section">
+                <h2>JS Fundamentals Exercise</h2>
+                <div><img src="./assignments/js-fundamentals-template/images/logo.png" alt="Catalyte Logo" /></div>
+            </div>
             <h2>Instructions</h2>
             <p>Follow the instructions in <em>index.js</em> to complete this exercise. As you make changes, make sure to <em>save your file and refresh this page</em></p>
             <p>The following sections show the results of your work. Make sure everything has a &#10004; before submitting! If you see a &#10060;, then that requirement is not met. Click the Test button to see the results. If you see any test cases without a &#10004; or an &#10060;, it means you have an Error. Open your console to see more information.</p>
             <button class="submit">Test</button>
-        </section>
-        <section>
-            <h2>Creating a Data Model</h2>
+            <br>
+            <br>
+            <h3>Creating a Data Model</h3>
             <div class="requirement-block" id="1">
                 <h3 class="requirement">1. Create an object named "applicant1"</h3>
                 <ul class="test-results hidden">
@@ -63,9 +70,9 @@
                     <li><span class="failure-icon">&#10060;</span><span class="success-icon">&#10004;</span>address property is an object with the correct values</li>
                 </ul>
             </div>
-        </section>
-        <section>
-            <h2>Accessing Data from an Object</h2>
+            <br>
+            <br>
+            <h3>Accessing Data from an Object</h3>
             <div class="requirement-block" id="6">
                 <h3 class="requirement">6. Uncomment the line that properly accesses applicant1's name</h3>
                 <ul class="test-results hidden">
@@ -84,9 +91,9 @@
                     <li><span class="failure-icon">&#10060;</span><span class="success-icon">&#10004;</span>city property is properly accessed</li>
                 </ul>
             </div>
-        </section>
-        <section>
-            <h2>Using object properties in expressions</h2>
+            <br>
+            <br>
+            <h3>Using object properties in expressions</h3>
             <div class="requirement-block" id="9">
                 <h3 class="requirement">9. Replace the placeholder string with an expression that returns true if applicant1's age is greater than or equal to 18.</h3>
                 <ul class="test-results hidden">
@@ -116,9 +123,9 @@
                     <li><span class="failure-icon">&#10060;</span><span class="success-icon">&#10004;</span>isActiveApplicant returns false if applicant is not active</li>
                 </ul>
             </div>
-        </section>
-        <section>
-            <h2>Interacting with Arrays</h2>
+            <br>
+            <br>
+            <h3>Interacting with Arrays</h3>
             <div class="requirement-block" id="13">
                 <h3 class="requirement">13. Given the following array, write code to access the first item</h3>
                 <ul class="test-results hidden">
@@ -147,8 +154,8 @@
                     <li><span class="failure-icon">&#10060;</span><span class="success-icon">&#10004;</span>runsScored returns 0 if called with an empty array</li>
                 </ul>
             </div>
-        </section>
-        <section>
+            <br>
+            <br>
             <h2>Combining arrays and objects</h2>
             <div class="requirement-block" id="17">
                 <h3 class="requirement">17. Given an array of applicants, return an array of eligible applicants.</h3>
@@ -168,7 +175,8 @@
                     <li><span class="failure-icon">&#10060;</span><span class="success-icon">&#10004;</span>filterApplicantsByProgramStatus returns an empty array if no applicants are active</li>
                 </ul>
             </div>
-        </section>
     </main>
+    <div data-include="../../components/footer.html"></div>
+    <script src="../../scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
